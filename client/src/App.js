@@ -3,6 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Home from './views/Home/Home';
+import About from './views/About/About';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Navbar from './components/Navbar/index';
@@ -33,6 +34,10 @@ function App() {
               <Route 
                 path="/" 
                 element={<Home />} 
+              />
+              <Route
+              path='/about'
+              element={<About />}
               />
               <Route
               path='/signup'
