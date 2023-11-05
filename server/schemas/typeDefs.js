@@ -15,12 +15,11 @@ type Auth {
 
 type Query {
     users: [User]!
-    profile(profileId: ID!): User
+   user(userId: ID!): User
 }
 type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-
     removeUser(userId: ID!): User
 }
 `

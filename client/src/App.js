@@ -8,6 +8,7 @@ import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Navbar from './components/Navbar/index';
 import Signup from './views/Signup/Signup';
+import Login from './views/Login/Login';
 import 'bootstrap/dist/css/bootstrap.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
@@ -37,6 +38,10 @@ function App() {
               <Route
               path='/signup'
               element={<Signup />}
+              />
+              <Route
+              path='/login'
+              element={<Login />}
               />
               {/* Define a route that will take in variable data */}
               <Route 
