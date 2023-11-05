@@ -3,7 +3,6 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Home from './views/Home/Home';
-import Profile from './views/Profile/Profile';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Navbar from './components/Navbar/index';
@@ -44,10 +43,7 @@ function App() {
               element={<Login />}
               />
               {/* Define a route that will take in variable data */}
-              <Route 
-                path="/profiles/:profileId" 
-                element={<Profile />} 
-              />
+           
             </Routes>
           </div>
           <Footer />
