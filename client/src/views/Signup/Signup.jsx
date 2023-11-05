@@ -1,79 +1,139 @@
-import React, { useState } from 'react';
-import { useMutation, gql } from '@apollo/client';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import React, { useState, useEffect } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
 
-const SIGN_UP = gql`
-  mutation SignUp($name: String!, $email: String!, $password: String!) {
-    signUp(name: $name, email: $email, password: $password) {
-      // Define what data you want to retrieve after successful signup
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutations';
+
+import Auth from '../../utils/auth';
+
+const SignupForm = () => {
+  // set initial form state
+  const [userFormData, setUserFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+  // set state for form validation
+  const [validated] = useState(false);
+  // set state for alert
+  const [showAlert, setShowAlert] = useState(false);
+
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  useEffect(() => {
+    if (error) {
+      setShowAlert(true);
+    } else {
+      setShowAlert(false);
     }
-  }
-`;
+  }, [error]);
 
-const SignupPage = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
 
-  const [signUp] = useMutation(SIGN_UP);
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
-    signUp({ variables: { name, email, password } })
-      .then(response => {
-        // Handle success (if needed)
-        console.log('Sign up successful:', response);
-      })
-      .catch(error => {
-        // Handle error (if needed)
-        console.error('Error signing up:', error);
+    try {
+      const { data } = await addUser({
+        variables: { ...userFormData },
       });
+      console.log(data);
+      Auth.login(data.addUser.token);
+    } catch (err) {
+      console.error(err);
+    }
+
+    setUserFormData({
+      name: '',
+      email: '',
+      password: '',
+    });
   };
 
   return (
-    <Form onSubmit={handleFormSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicFullName">
-        <Form.Label>Full Name</Form.Label>
-        <Form.Control
-          type="name"
-          placeholder="Enter Full Name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-     
-      <Form.Group className="mb-3" controlId="formBasicFullName">
-        <Form.Label>Email</Form.Label>
-        <Form.Control
-          type="email"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-      </Form.Group>
+    <>
+      {/* This is needed for the validation functionality above */}
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        {/* show alert if server response is bad */}
+        <Alert
+          dismissible
+          onClose={() => setShowAlert(false)}
+          show={showAlert}
+          variant="danger"
+        >
+          Something went wrong with your signup!
+        </Alert>
 
-      <Form.Group className="mb-3" controlId="formBasicFullName">
-        <Form.Label>Choose Password</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Choose Password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </Form.Group>
+        <Form.Group className='mb-3'>
+          <Form.Label htmlFor="name">name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Your name"
+            name="name"
+            onChange={handleInputChange}
+            value={userFormData.name}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            name is required!
+          </Form.Control.Feedback>
+        </Form.Group>
 
-      {/* Add similar Form.Group components for Email and Password */}
-      
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+        <Form.Group className='mb-3'>
+          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Your email address"
+            name="email"
+            onChange={handleInputChange}
+            value={userFormData.email}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Email is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group className='mb-3'>
+          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Your password"
+            name="password"
+            onChange={handleInputChange}
+            value={userFormData.password}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Password is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Button
+          disabled={
+            !(
+              userFormData.name &&
+              userFormData.email &&
+              userFormData.password
+            )
+          }
+          type="submit"
+          variant="success"
+        >
+          Submit
+        </Button>
+      </Form>
+    </>
   );
 };
 
-export default SignupPage;
+export default SignupForm;
