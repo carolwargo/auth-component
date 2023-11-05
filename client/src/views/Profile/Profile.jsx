@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/client';
 
 import { QUERY_SINGLE_USER } from '../../utils/queries';
 
-const Profile = () => {
+const User = () => {
   // Use `useParams()` to retrieve value of the route parameter `:userId`
   const { userId } = useParams();
 
@@ -30,4 +30,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default User;
