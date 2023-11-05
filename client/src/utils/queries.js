@@ -5,6 +5,8 @@ export const QUERY_USERS = gql`
     users {
       _id
       name
+      email
+      password
     }
   }
 `;
@@ -14,6 +16,8 @@ export const QUERY_SINGLE_USER = gql`
     user(userId: $userId) {
       _id
       name
+      email
+      password
     }
   }
 `;

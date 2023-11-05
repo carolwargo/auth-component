@@ -6,6 +6,8 @@ import Home from './views/Home/Home';
 import Profile from './views/Profile/Profile';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
+import Navbar from './components/Navbar/index';
+import Signup from './views/Signup/Signup';
 import 'bootstrap/dist/css/bootstrap.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
@@ -20,6 +22,7 @@ function App() {
     <ApolloProvider client={client}>
       {/* Wrap page elements in Router component to keep track of location state */}
       <Router>
+        <Navbar />
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
@@ -30,6 +33,10 @@ function App() {
               <Route 
                 path="/" 
                 element={<Home />} 
+              />
+              <Route
+              path='/signup'
+              element={<Signup />}
               />
               {/* Define a route that will take in variable data */}
               <Route 

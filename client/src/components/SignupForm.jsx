@@ -13,7 +13,7 @@ const SignupForm = () => {
     update(cache, { data: { addUser } }) {
       try {
         const { users } = cache.readQuery({ query: QUERY_USERS });
-
+  
         cache.writeQuery({
           query: QUERY_USERS,
           data: { users: [...users, addUser] },
@@ -23,20 +23,23 @@ const SignupForm = () => {
       }
     },
   });
+  
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await addUser({
-        variables: { name },
-      });
-
-      setName('');
-    } catch (err) {
-      console.error(err);
-    }
-  };
+        await addUser({
+          variables: { name, email, password }, // Include email and password
+        });
+      
+        setName('');
+        setEmail('');
+        setPassword('');
+      } catch (err) {
+        console.error(err);
+      }
+    };
 
   return (
     <div>
