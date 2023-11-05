@@ -1,26 +1,34 @@
 import React from 'react';
-import ProfileList from '../components/ProfileList';
 import { useQuery } from '@apollo/client';
-import { QUERY_PROFILES } from '../utils/queries';
+import { QUERY_USERS } from '../../utils/queries';
+import SignupForm from '../../components/SignupForm';
+
+import { Col, Row } from 'react-bootstrap';
+import MeCardOnly from '../../assets/images/MeCardOnly.png';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_PROFILES);
-  const profiles = data?.profiles || [];
+  const { loading, data } = useQuery(QUERY_USERS);
+  const user = data?.user || [];
 
   return (
     <main>
-      <div className="flex-row justify-center">
-        <div className="col-12 col-md-10 my-3">
+      
+        <Row className="flex-row justify-center">
+        <Col >
+          <img src={MeCardOnly} alt='business-card'>
+          </img>
+        </Col>
+        <Col >
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ProfileList
-              profiles={profiles}
-              title="Here's the current roster of friends..."
+            <SignupForm
+             user={user}
             />
           )}
-        </div>
-      </div>
+          </Col>
+        </Row>
+ 
     </main>
   );
 };

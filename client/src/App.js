@@ -2,10 +2,13 @@ import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Home from './views/Home/Home';
+import Profile from './views/Profile/Profile';
+import Header from './components/Header/index';
+import Footer from './components/Footer/index';
+import 'bootstrap/dist/css/bootstrap.css';
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
 
 const client = new ApolloClient({
   uri: '/graphql',
