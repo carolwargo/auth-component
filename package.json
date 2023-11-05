@@ -6,7 +6,7 @@
   
   "description": "",
   
-  "main": "server/server.js",
+  "main": "server.js",
   
   "scripts": {
   
@@ -41,6 +41,9 @@
   },
   
   "dependencies": {
+  
+    
+  "apollo-server": "^3.12.1",
   
     
   "jwt-decode": "^4.0.0"
