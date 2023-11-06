@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Concrete from '../../assets/images/Concrete.png';
+
 
 const Home = () => {
   return (
@@ -10,8 +10,7 @@ const Home = () => {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'
     }}>
-      <Link to="/login" className="btn btn-secondary">Login</Link>
-      <Link to="/signup" className="btn btn-secondary">Sign Up</Link>
+
     </main>
   );
 };

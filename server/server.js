@@ -2,6 +2,11 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
+
+
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -17,6 +22,18 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+//nodemailer
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_ADDRESS,
+      pass: process.env.EMAIL_PASSWORD
+    }
+  });
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
@@ -24,6 +41,32 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
+
+app.post('/submit-form', (req, res) => {
+    const { firstName, lastName, email, message } = req.body;
+  
+    const mailOptions = {
+      from: 'YOUR_EMAIL@gmail.com',
+      to: 'carolwargo.dev@gmail.com',
+      subject: 'New Contact Form Submission',
+      text: `
+        Name: ${firstName} ${lastName}
+        Email: ${email}
+        Message: ${message}
+      `
+    };
+  
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+      } else {
+        console.log('Email sent: ' + info.response);
+        res.send('Form submitted successfully!');
+      }
+    });
+  });
+
 
 const startApolloServer = async () => {
     await server.start();

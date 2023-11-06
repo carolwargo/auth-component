@@ -16,7 +16,7 @@ function NavDropdownExample() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className='mr-auto'>
         <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/about">About</Nav.Link>
+        <Nav.Link as={Link} to="/about">About</Nav.Link>
         </Nav>
         <Nav className='mx-auto'>
           <NavDropdown title="Service Menu" id="nav-dropdown">
@@ -37,9 +37,18 @@ function NavDropdownExample() {
           <Nav.Link
   as={Link}
   to="/contact"
-  style={{
-    color: '#fff',
-    backgroundColor: '#007bff',
+ 
+    style={{
+        fontSize: "1.25rem",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", // Example shadow: 0 offset, 4px blur, 8px spread, 10% opacity
+        textShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
+        backgroundColor: "#BF6A6A",
+        color: "white",
+        paddingRight: "2rem",
+        paddingLeft: "2rem",
+    
+  
+  
     borderRadius: '4px',
     padding: '4px 8px 2px 8px',
     textDecoration: 'none',

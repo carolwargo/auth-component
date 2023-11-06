@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Home from './views/Home/Home';
 import About from './views/About/About';
-import Header from './components/Header/index';
+import Contact from './views/Contact/Contact';
+
+
 import Footer from './components/Footer/index';
 import Navbar from './components/Navbar/index';
 import Signup from './views/Signup/Signup';
@@ -25,7 +27,7 @@ function App() {
       <Router>
         <Navbar />
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+        
           <div className="container">
             {/* Wrap Route elements in a Routes component */}
             <Routes>
@@ -39,6 +41,11 @@ function App() {
               path='/about'
               element={<About />}
               />
+              <Route
+              path='/contact'
+              element={<Contact />}
+              />
+         
               <Route
               path='/signup'
               element={<Signup />}
