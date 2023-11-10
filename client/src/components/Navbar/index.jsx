@@ -11,7 +11,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 function NavDropdownExample() {
     
   return (
-    <Navbar expand="md">
+    <Navbar expand="md"
+    style={{boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)'}}
+    >
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className='mr-auto'>
