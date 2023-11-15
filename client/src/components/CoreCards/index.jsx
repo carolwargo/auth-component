@@ -26,7 +26,7 @@ export default function intro() {
       <Col md={6}
       style={{paddingBottom:"1rem"}}>
       <motion.div whileHover={{ scale: .95 }} whileTap={{ scale: 0.9 }}>
-       <Link to="/web-design">
+      
       <Card
          style={{boxShadow: '0 4px 8px rgba(0, 0, 255, 0.5)'}}
          >
@@ -35,14 +35,14 @@ export default function intro() {
 <button className="btn card-button"><Link to="/web-design">WEB DESIGN & DEVELOPMENT</Link></button>
         </Card.Body> 
       </Card>
-      </Link> 
+    
       </motion.div>
       </Col>
 
       <Col md={6}
       style={{paddingBottom:"1rem"}}>
       <motion.div whileHover={{ scale: .95 }} whileTap={{ scale: 0.9 }}>
-       <Link to="/web-design">
+    
       <Card
          style={{boxShadow: '0 4px 8px rgba(0, 0, 255, 0.5)'}}
          >
@@ -51,7 +51,7 @@ export default function intro() {
 <button className="btn card-button"><Link to="/web-design">GRAPHIC DESIGN</Link></button>
         </Card.Body> 
       </Card>
-      </Link> 
+   
       </motion.div>
       </Col>
       </Row>
@@ -68,7 +68,7 @@ export default function intro() {
       <Col md={3}
       style={{paddingBottom:"1rem"}}>
       <motion.div whileHover={{ scale: .95 }} whileTap={{ scale: 0.9 }}>
-       <Link to="/web-design">
+    
 
       <Card
          style={{boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)'}}
@@ -78,10 +78,8 @@ export default function intro() {
       <Card.Title className="text-center" 
       style={{fontSize:'1rem'}}>Dynamic Web Design</Card.Title>
 <button className="btn card-button"><Link to="/web-design">Dynamic Web Design</Link></button>
-        </Card.Body> 
-        
+        </Card.Body>    
       </Card>
-      </Link> 
       </motion.div>
       </Col>
 
