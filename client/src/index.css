@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* index.css */
+
+/* Import MDB React UI Kit styles */
+//@import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+
+/* Import MDB React UI Kit icons */
+//@import 'mdb-react-ui-kit-icons/dist/css/mdb-icons.css';
