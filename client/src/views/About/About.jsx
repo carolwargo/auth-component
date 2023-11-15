@@ -3,8 +3,8 @@ import {
   MDBBtn,
  
 } from 'mdb-react-ui-kit';
-import Graf from '../../assets/images/Graf.png';
-// Correct import statement for MDBIcon
+import Graffiti2 from '../../assets/images/Graffiti2.png';;
+// Correct import statement ../../components/DesignCarousel/Carousel
 export default function App() {
  
 
@@ -16,7 +16,7 @@ export default function App() {
         id='intro-example'
         className='p-5 text-center bg-image'
            style={{
-          backgroundImage: `url(${Graf})`,
+          backgroundImage: `url(${Graffiti2})`,
           backgroundSize: 'cover', // Set the background size to cover the entire viewport
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed', // Optional: Keep the background fixed while scrolling
@@ -25,7 +25,7 @@ export default function App() {
         <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.0)' }}>
           <div className='d-flex justify-content-center align-items-center h-100'>
             <div className='text-white'>
-              <h1 className='mb-3'>Learn Bootstrap 5 with MDB</h1>
+              <h1 className='mb-3'>Graphic Design</h1>
               <h5 className='mb-4'>Best &amp; free guide of responsive web design</h5>
               <MDBBtn
                 className='m-2'
@@ -52,6 +52,7 @@ export default function App() {
           </div>
         </div>
       </div>
+     
     </header>
   );
 }

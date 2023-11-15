@@ -9,8 +9,7 @@ import {
   MDBCollapse,
   MDBBtn,
 } from 'mdb-react-ui-kit';
-import { MDBIcon } from 'mdb-react-ui-kit-icons'; // Correct import statement for MDBIcon
-
+import { MDBIcon } from 'mdb-react-ui-kit';
 export default function App() {
   const [showBasic, setShowBasic] = useState(false);
 
