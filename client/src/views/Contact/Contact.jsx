@@ -37,7 +37,7 @@ const Contact = () => {
       style={{
         borderRadius: '10px',
       }}>
-         <h1 style={{ fontFamily: "Great Vibes", color: "#BF6A6A", textShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", }}>Contact</h1>
+         <h1 style={{ fontFamily: "Great Vibes", color: "#0F7E8F", textShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", }}>Contact</h1>
         <Form className="form" onSubmit={handleSubmit}>
           <Row>
             <Col>
@@ -102,7 +102,7 @@ const Contact = () => {
             fontSize: "1.25rem",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", // Example shadow: 0 offset, 4px blur, 8px spread, 10% opacity
             textShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
-            backgroundColor: "#BF6A6A",
+            backgroundColor: "#0F7E8F",
             color: "white",
             paddingRight: "1.75rem",
             paddingLeft: "1.75rem",

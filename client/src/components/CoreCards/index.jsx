@@ -8,6 +8,9 @@ import { Container } from "react-bootstrap";
 import Dev from "../../assets/images/Dev.png";
 import Design from "../../assets/images/Design.png";
 import GraphicDesign from "../../assets/images/GraphicDesign.png";
+//import Graffiti from "../../assets/images/Graffiti.png";
+import CustomG from "../../assets/images/CustomG.png";
+import WebD from "../../assets/images/WebD.png";
 import Marketing from "../../assets/images/Marketing.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -30,10 +33,8 @@ export default function intro() {
       <Card
          style={{boxShadow: '0 4px 8px rgba(0, 0, 255, 0.5)'}}
          >
-          <Card.Img variant="top" src={Design} />
-          <Card.Body style={{ textAlign: 'center' }}>
-<button className="btn card-button"><Link to="/web-design">WEB DESIGN & DEVELOPMENT</Link></button>
-        </Card.Body> 
+         <Link to="/web-design"><Card.Img variant="top" src={WebD} /></Link> 
+          
       </Card>
     
       </motion.div>
@@ -46,10 +47,8 @@ export default function intro() {
       <Card
          style={{boxShadow: '0 4px 8px rgba(0, 0, 255, 0.5)'}}
          >
-          <Card.Img variant="top" src={GraphicDesign} />
-          <Card.Body style={{ textAlign: 'center' }}>
-<button className="btn card-button"><Link to="/web-design">GRAPHIC DESIGN</Link></button>
-        </Card.Body> 
+         <Link to="/web-design"><Card.Img variant="top" src={CustomG} /></Link> 
+       
       </Card>
    
       </motion.div>
