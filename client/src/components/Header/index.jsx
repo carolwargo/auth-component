@@ -26,7 +26,7 @@ const Header = () => {
         <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.0)' }}>
           <div className='d-flex justify-content-center align-items-center h-100'>
             <div className='text-white'>
-              <h1 className='mb-3'>Graphic Design</h1>
+              <h1 className='mb-3'>Welcome</h1>
               <h5 className='mb-4'>Best &amp; free guide of responsive web design</h5>
               <MDBBtn
                 className='m-2'
@@ -35,9 +35,9 @@ const Header = () => {
                 size='lg'
                 rel='nofollow'
                 target='_blank'
-                href='https://www.youtube.com/watch?v=c9B4TPnak1A'
+                href={'/graphic-design'}
               >
-                Start tutorial
+               Graphic Design
               </MDBBtn>
               <MDBBtn
                 className='m-2'
@@ -45,9 +45,9 @@ const Header = () => {
                 outline
                 size='lg'
                 target='_blank'
-                href='./Contact'
+                href='./web-dev'
               >
-                Start Now
+                Web Development
               </MDBBtn>
             </div>
           </div>

@@ -33,7 +33,7 @@ export default function intro() {
       <Card
          style={{boxShadow: '0 4px 8px rgba(0, 0, 255, 0.5)'}}
          >
-         <Link to="/web-design"><Card.Img variant="top" src={WebD} /></Link> 
+         <Link to="/web-dev"><Card.Img variant="top" src={WebD} /></Link> 
           
       </Card>
     
@@ -47,7 +47,7 @@ export default function intro() {
       <Card
          style={{boxShadow: '0 4px 8px rgba(0, 0, 255, 0.5)'}}
          >
-         <Link to="/web-design"><Card.Img variant="top" src={CustomG} /></Link> 
+         <Link to="/graphic-design"><Card.Img variant="top" src={CustomG} /></Link> 
        
       </Card>
    
@@ -75,7 +75,7 @@ export default function intro() {
           <Card.Img variant="top" src={Design} />
       <Card.Body>
       <Card.Title className="text-center" 
-      style={{fontSize:'1rem'}}>Dynamic Web Design</Card.Title>
+      style={{fontSize:'1rem'}}>Design</Card.Title>
 <button className="btn card-button"><Link to="/web-design">Dynamic Web Design</Link></button>
         </Card.Body>    
       </Card>

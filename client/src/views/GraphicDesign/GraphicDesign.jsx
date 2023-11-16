@@ -5,7 +5,7 @@ import {
   MDBBtn
  
 } from 'mdb-react-ui-kit';
-import Graffiti2 from '../../assets/images/Graffiti2.png';;
+import WebD from '../../assets/images/WebD.png';;
 
 const GraphicDesign = () => {
   return (
@@ -22,7 +22,7 @@ const GraphicDesign = () => {
   id='intro-example'
   className='p-5 text-center bg-image'
      style={{
-    backgroundImage: `url(${Graffiti2})`,
+    backgroundImage: `url(${WebD})`,
     backgroundSize: 'cover', // Set the background size to cover the entire viewport
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed', // Optional: Keep the background fixed while scrolling
@@ -42,18 +42,9 @@ const GraphicDesign = () => {
           target='_blank'
           href='https://www.youtube.com/watch?v=c9B4TPnak1A'
         >
-          Start tutorial
+          Contact
         </MDBBtn>
-        <MDBBtn
-          className='m-2'
-          tag='a'
-          outline
-          size='lg'
-          target='_blank'
-          href='./Contact'
-        >
-          Start Now
-        </MDBBtn>
+     
       </div>
     </div>
   </div>

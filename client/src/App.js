@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./views/Home/Home";
 import About from "./views/About/About";
 import Contact from "./views/Contact/Contact";
-import WebDesign from "./views/WebDesign/WebDesign";
+import WebDev from "./views/WebDev/WebDev";
 import GraphicDesign from "./views/GraphicDesign/GraphicDesign";
 import SoftwareDevelopment from "./views/SoftwareDevelopment/SoftwareDevelopment";
 import DigitalMarketing from "./views/DigitalMarketing/DigitalMarketing"; 
@@ -39,7 +39,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/web-design" element={<WebDesign/>} />
+          <Route path="/web-dev" element={<WebDev/>} />
           <Route path="/graphic-design" element={<GraphicDesign />} />
           <Route path="/software-development" element={<SoftwareDevelopment />} />
           <Route path="/digital-marketing" element={<DigitalMarketing />} />

@@ -1,6 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
+import WebHeader from '../../assets/images/WebHeader.png';
+import {
+  MDBBtn
+} from 'mdb-react-ui-kit';
 
 const WebDesign = () => {
   return (
@@ -9,6 +13,51 @@ const WebDesign = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
+          <header>
+
+
+<div
+  id='intro-example'
+  className='p-5 text-center bg-image'
+     style={{
+    backgroundImage: `url(${WebHeader})`,
+    backgroundSize: 'cover', // Set the background size to cover the entire viewport
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed', // Optional: Keep the background fixed while scrolling
+  }}
+>
+  <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.0)' }}>
+    <div className='d-flex justify-content-center align-items-center h-100'>
+      <div className='text-white'>
+        <h1 className='mb-3'>Welcome</h1>
+        <h5 className='mb-4'>Best &amp; free guide of responsive web design</h5>
+        <MDBBtn
+          className='m-2'
+          tag='a'
+          outline
+          size='lg'
+          rel='nofollow'
+          target='_blank'
+          href='https://www.youtube.com/watch?v=c9B4TPnak1A'
+        >
+         Graphic Design
+        </MDBBtn>
+        <MDBBtn
+          className='m-2'
+          tag='a'
+          outline
+          size='lg'
+          target='_blank'
+          href='./Contact'
+        >
+          Web Development
+        </MDBBtn>
+      </div>
+    </div>
+  </div>
+</div>
+
+</header>
       <div>
         <Container className="web-design" id="responsive-web-design">
           <h3>
