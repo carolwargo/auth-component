@@ -12,10 +12,9 @@ const WebDesign = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      style={{ overflow: "hidden" }}
     >
-          <header>
-
-
+          <div>
 <div
   id='intro-example'
   className='p-5 text-center bg-image'
@@ -57,7 +56,7 @@ const WebDesign = () => {
   </div>
 </div>
 
-</header>
+</div>
       <div>
         <Container className="web-design" id="responsive-web-design">
           <h3>
