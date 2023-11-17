@@ -26,6 +26,7 @@ function NavDropdownExample() {
           <NavDropdown.Item as={Link}  eventKey="/web-development">Web Development</NavDropdown.Item>
             <NavDropdown.Item as={Link} eventKey="/software-solutions">Software Solutions</NavDropdown.Item>
             <NavDropdown.Item as={Link} eventKey="/graphic-design">Graphic Design Work</NavDropdown.Item>
+            <NavDropdown.Item as={Link} eventKey="/graphic-design/logo">Logo</NavDropdown.Item>
             <NavDropdown.Item as={Link} eventKey="/digital-marketing">Digital Marketing</NavDropdown.Item>
             <NavDropdown.Item as={Link} eventKey="/ecommerce">E-Commerce Integration</NavDropdown.Item>
             <NavDropdown.Item as={Link} eventKey="/mobile-app">Mobile Applications</NavDropdown.Item>

@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
+
 import { motion } from "framer-motion";
 
 import GraphicHeader from '../../components/GraphicHeader/index.jsx'
@@ -14,8 +16,6 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
-  MDBCardImage,
-  MDBRipple,
   MDBRow,
   MDBCol,
   
@@ -32,134 +32,167 @@ export const GraphicDesign = () => {
     >
       <GraphicHeader />
       <br></br>
-      <Container className="graphic-design text-center" id="design-workspace">
+      <Container className="graphic-design-intro text-center" id="graphic-design-intro">
           <p>PROFESSIONAL HELP MADE EASY</p>
              <h2>
               Collaborate With A Designer</h2><p className='mb-4'>
 Our network of trusted designers can craft distinctive designs tailored to every phase of your business venture or special event in your journey.
 </p>
 </Container>
+<br></br>
 
-<Container>
+<Container className="graphic-design-process" id="graphic-design-process">
 <Row className="row">
         <Col className="col-sm-3 d-flex align-items-center">
-         
           <FcTemplate size={150} className="mr-2" /> {/* Adjust the icon size and margin as needed */}
-      
           <p>Choose your product based on your individual need.</p>
         </Col>
-        <Col className="col-sm-3 d-flex align-items-center">
-         
+
+        <Col className="col-sm-3 d-flex align-items-center"> 
           <FcTodoList size={150} className="mr-2" />
-          
           <p>Fill out a brief and share your project details with your designer.</p>
         </Col>
+
         <Col className="col-sm-3 d-flex align-items-center">
-     
-         
           <FcCollaboration size={150} className="mr-2" />
-          
           <p>Work with your designer on design and revisions.</p>
       </Col>
+
       <Col className="col-sm-3 d-flex align-items-center">
-         
           <FcDownload size={150} className="mr-2" />
-         
             <p>Receive your files & downloads and discuss printing options.</p>
       </Col>
 </Row>
+
 <Row className="row d-flex align-items-center justify-content-center">
         <Col className="d-flex align-items-center justify-content-center">
-        <a href='/' className='btn btn d-flex align-items-center'>
+        <a href='#graphic-design-product' className='btn btn d-flex align-items-center'>
   Choose a product to get started <FaArrowRight className='ms-2' />
 </a>
           </Col>
   </Row>
 </Container>
 <br></br>
+<br></br>
+<br></br>
 
-
-<Container>
+<Container className="graphic-design-product" id="graphic-design-product">
 <Row className="row d-flex align-items-center justify-content-center">
-<Col className="d-flex align-items-center justify-content-center">
-  <h3>
-    Choose the product you need designed
+
+  <h3 className="text-center">
+    Choose the product you need designed for your business or event.
   </h3>
-  </Col>
   </Row>
-  <MDBRow className='row-cols-1 row-cols-md-4 g-4'>
-  <MDBCol>
+<Row className="row d-flex align-items-center justify-content-center text-center">
+<p>Not sure what you are looking for? <span>
+  <a href='/'>
+   Let us help to define your need <FaArrowRight className='ms-2' />
+</a>
+</span>
+</p>
+</Row>
+<br></br>
+
+  <MDBRow className='graphic-design-packages row-cols-1 row-cols-md-4 g-4' id="graphic-design-packages">
+
+
+  <MDBCol className="graphic-design-business-cards" id="graphic-design-business-cards">
 <MDBCard>
-      <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/111.webp' fluid alt='...' />
-      
-          <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
-        
-      </MDBRipple>
+<MDBCarousel showControls fade showIndicators={false}>
+      <MDBCarouselItem itemId={1}>
+        <img src='https://mdbootstrap.com/img/new/slides/041.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+      <MDBCarouselItem itemId={2}>
+        <img src='https://mdbootstrap.com/img/new/slides/042.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+      <MDBCarouselItem itemId={3}>
+        <img src='https://mdbootstrap.com/img/new/slides/043.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+    </MDBCarousel>
       <MDBCardBody>
-        <MDBCardTitle>Card title</MDBCardTitle>
+         <MDBCardTitle>Business Cards</MDBCardTitle>
         <MDBCardText>
           Some quick example text to build on the card title and make up the bulk of the card's content.
         </MDBCardText>
- <a href='/' className='btn btn d-flex align-items-center'>
-  Go to Next Page <FaArrowRight className='ms-2' />
+        <a href='/' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
+ Get started with business cards <FaArrowRight className='ms-2' />
 </a>
       </MDBCardBody>
     </MDBCard>
     </MDBCol>
-    <MDBCol>
+
+    <MDBCol className="graphic-design-essentials" id="graphic-design-essentials">
 <MDBCard>
-      <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/111.webp' fluid alt='...' />
-      
-          <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
-        
-      </MDBRipple>
+<MDBCarousel showControls fade showIndicators={false}>
+      <MDBCarouselItem itemId={1}>
+        <img src='https://mdbootstrap.com/img/new/slides/041.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+      <MDBCarouselItem itemId={2}>
+        <img src='https://mdbootstrap.com/img/new/slides/042.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+      <MDBCarouselItem itemId={3}>
+        <img src='https://mdbootstrap.com/img/new/slides/043.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+    </MDBCarousel>
       <MDBCardBody>
-        <MDBCardTitle>Card title</MDBCardTitle>
+      <MDBCardTitle>Start Up Essentials</MDBCardTitle>
         <MDBCardText>
           Some quick example text to build on the card title and make up the bulk of the card's content.
         </MDBCardText>
- <a href='/' className='btn btn d-flex align-items-center'>
-  Go to Next Page <FaArrowRight className='ms-2' />
+        <a href='/' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
+ Get started with essentials <FaArrowRight className='ms-2' />
 </a>
       </MDBCardBody>
     </MDBCard>
     </MDBCol>
-    <MDBCol>
+  
+
+  <MDBCol className="graphic-design-logo" id="graphic-design-logo">
 <MDBCard>
-      <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/111.webp' fluid alt='...' />
-      
-          <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
-        
-      </MDBRipple>
+      <MDBCarousel showControls fade showIndicators={false}>
+      <MDBCarouselItem itemId={1}>
+        <img src='https://mdbootstrap.com/img/new/slides/041.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+      <MDBCarouselItem itemId={2}>
+        <img src='https://mdbootstrap.com/img/new/slides/042.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+      <MDBCarouselItem itemId={3}>
+        <img src='https://mdbootstrap.com/img/new/slides/043.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+    </MDBCarousel>
       <MDBCardBody>
-        <MDBCardTitle>Card title</MDBCardTitle>
+        <MDBCardTitle>Custom Logo Package</MDBCardTitle>
         <MDBCardText>
-          Some quick example text to build on the card title and make up the bulk of the card's content.
+       Custom logo that is unique to your brand and business. 
         </MDBCardText>
- <a href='/' className='btn btn d-flex align-items-center'>
-  Go to Next Page <FaArrowRight className='ms-2' />
+ <a href='/' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
+ Get started with logo <FaArrowRight className='ms-2' />
 </a>
       </MDBCardBody>
     </MDBCard>
     </MDBCol>
-   <MDBCol>
+
+
+    <MDBCol className="graphic-design-branding" id="graphic-design-branding">
 <MDBCard>
-      <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/111.webp' fluid alt='...' />
-      
-          <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
-        
-      </MDBRipple>
+<MDBCarousel showControls fade showIndicators={false}>
+      <MDBCarouselItem itemId={1}>
+        <img src='https://mdbootstrap.com/img/new/slides/041.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+      <MDBCarouselItem itemId={2}>
+        <img src='https://mdbootstrap.com/img/new/slides/042.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+      <MDBCarouselItem itemId={3}>
+        <img src='https://mdbootstrap.com/img/new/slides/043.jpg' className='d-block w-100' alt='...' />
+      </MDBCarouselItem>
+    </MDBCarousel>
       <MDBCardBody>
-        <MDBCardTitle>Card title</MDBCardTitle>
+        <MDBCardTitle>Logo & Branding Kit</MDBCardTitle>
         <MDBCardText>
           Some quick example text to build on the card title and make up the bulk of the card's content.
         </MDBCardText>
- <a href='/' className='btn btn d-flex align-items-center'>
-  Go to Next Page <FaArrowRight className='ms-2' />
+        <a href='/' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
+ Get started with branding <FaArrowRight className='ms-2' />
 </a>
       </MDBCardBody>
     </MDBCard>

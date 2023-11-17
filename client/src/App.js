@@ -11,6 +11,12 @@ import GraphicDesign from "./views/GraphicDesign/GraphicDesign";
 import SoftwareDevelopment from "./views/SoftwareDevelopment/SoftwareDevelopment";
 import DigitalMarketing from "./views/DigitalMarketing/DigitalMarketing"; 
 import Ecommerce from "./views/Ecommerce/Ecommerce";  
+
+import Logo from "./views/Logo/Logo";
+import Essentials from "./views/Essentials/Essentials";
+import Branding from "./views/Branding/Branding";
+import BusinessCards from "./views/BusinessCards/BusinessCards";
+
 import Footer from "./components/Footer/index";
 import Navbar from "./components/Navbar/index";
 import Signup from "./views/Signup/Signup";
@@ -41,9 +47,15 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/web-dev" element={<WebDev/>} />
           <Route path="/graphic-design" element={<GraphicDesign />} />
+          <Route path="/logo" element={<Logo />} />
+          <Route path="/essentials" element={<Essentials />} />
+          <Route path="/branding" element={<Branding />} />
+          <Route path="/business-cards" element={<BusinessCards />} />
+
           <Route path="/software-development" element={<SoftwareDevelopment />} />
           <Route path="/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/ecommerce" element={<Ecommerce />} />
+          
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           {/* Define a route that will take in variable data */}
