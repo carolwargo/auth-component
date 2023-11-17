@@ -28,7 +28,7 @@ const WebDesign = () => {
 >
   <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.0)' }}>
     <div className='d-flex justify-content-center align-items-center h-100'>
-      <div className='text-white'>
+      <div className='text-'>
         <h1 className='mb-3'>Welcome</h1>
         <h5 className='mb-4'>Best &amp; free guide of responsive web design</h5>
         <MDBBtn
