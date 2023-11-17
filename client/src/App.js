@@ -16,7 +16,7 @@ import Logo from "./views/Logo/Logo";
 import Essentials from "./views/Essentials/Essentials";
 import Branding from "./views/Branding/Branding";
 import BusinessCards from "./views/BusinessCards/BusinessCards";
-
+import ContactForm from "./components/GraphicDesign/ContactForm/index.js";
 import Footer from "./components/Footer/index";
 import Navbar from "./components/Navbar/index";
 import Signup from "./views/Signup/Signup";
@@ -51,6 +51,7 @@ function App() {
           <Route path="/essentials" element={<Essentials />} />
           <Route path="/branding" element={<Branding />} />
           <Route path="/business-cards" element={<BusinessCards />} />
+          <Route path="/graphic-design/contact-form" element={<ContactForm />} />
 
           <Route path="/software-development" element={<SoftwareDevelopment />} />
           <Route path="/digital-marketing" element={<DigitalMarketing />} />

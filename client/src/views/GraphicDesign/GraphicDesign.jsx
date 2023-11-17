@@ -32,10 +32,11 @@ export const GraphicDesign = () => {
     >
       <GraphicHeader />
       <br></br>
+      <br></br>
       <Container className="graphic-design-intro text-center" id="graphic-design-intro">
           <p>PROFESSIONAL HELP MADE EASY</p>
              <h2>
-              Collaborate With A Designer</h2><p className='mb-4'>
+              Collaborate With A Design Expert</h2><p className='mb-4'>
 Our network of trusted designers can craft distinctive designs tailored to every phase of your business venture or special event in your journey.
 </p>
 </Container>
@@ -85,8 +86,8 @@ Our network of trusted designers can craft distinctive designs tailored to every
   </Row>
 <Row className="row d-flex align-items-center justify-content-center text-center">
 <p>Not sure what you are looking for? <span>
-  <a href='/'>
-   Let us help to define your need <FaArrowRight className='ms-2' />
+  <a href='/graphic-design/contact-form'>
+   Let us help to define your need <FaArrowRight className='ms-2'/>
 </a>
 </span>
 </p>
@@ -114,7 +115,7 @@ Our network of trusted designers can craft distinctive designs tailored to every
         <MDBCardText>
           Some quick example text to build on the card title and make up the bulk of the card's content.
         </MDBCardText>
-        <a href='/' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
+        <a href='/business-cards' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
  Get started with business cards <FaArrowRight className='ms-2' />
 </a>
       </MDBCardBody>
@@ -139,7 +140,7 @@ Our network of trusted designers can craft distinctive designs tailored to every
         <MDBCardText>
           Some quick example text to build on the card title and make up the bulk of the card's content.
         </MDBCardText>
-        <a href='/' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
+        <a href='/essentials' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
  Get started with essentials <FaArrowRight className='ms-2' />
 </a>
       </MDBCardBody>
@@ -165,7 +166,7 @@ Our network of trusted designers can craft distinctive designs tailored to every
         <MDBCardText>
        Custom logo that is unique to your brand and business. 
         </MDBCardText>
- <a href='/' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
+ <a href='/logo' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
  Get started with logo <FaArrowRight className='ms-2' />
 </a>
       </MDBCardBody>
@@ -191,18 +192,51 @@ Our network of trusted designers can craft distinctive designs tailored to every
         <MDBCardText>
           Some quick example text to build on the card title and make up the bulk of the card's content.
         </MDBCardText>
-        <a href='/' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
+        <a href='/branding' className='btn btn d-flex align-items-center' style={{fontSize:'12px'}}>
  Get started with branding <FaArrowRight className='ms-2' />
 </a>
       </MDBCardBody>
     </MDBCard>
     </MDBCol>
     </MDBRow>
+<br></br>
+<br></br>
+    <Row className="row d-flex align-items-center justify-content-center text-center">
+<p>Still not sure what you are looking for? <span>
+  <a href='/'>
+   Let us help to define your need <FaArrowRight className='ms-2'/>
+</a>
+</span>
+</p>
+</Row>
 </Container>
    
-        <Container className="graphic-design" id="design-workspace">
+
+   
+<br></br>
+<br></br>
+<br></br>
+
+<Container className="graphic-design-logo-intro" id="graphic-design-logo-intro">
+         
           <h3>
-            <b>GRAPHIC DESIGN</b>
+            <b>Get a professionally designed logo that you love!</b>
+          </h3>
+          <p>...the most important visual identifier of your brand.</p>
+</Container>
+
+
+
+          <Container className="graphic-design" id="graphic-design-inspired">
+          <h3>
+            <b>Get Inspired</b>
+          </h3>
+</Container>
+
+
+        <Container className="graphic-design" id="graphic-design-additional-products">
+          <h3>
+            <b>Get Inspired</b>
           </h3>
           <ul>
             <li>Banners</li>

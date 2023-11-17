@@ -21,9 +21,19 @@ function NavDropdownExample() {
         <Nav.Link as={Link} to="/about">About</Nav.Link>
         <Nav.Link as={Link} to="/graphic-design">Graphic Design</Nav.Link>
         </Nav>
+      
+
         <Nav className='mx-auto'>
           <NavDropdown title="Service Menu" id="nav-dropdown">
           <NavDropdown.Item as={Link}  eventKey="/web-development">Web Development</NavDropdown.Item>
+          <NavDropdown title="Graphic Design" className='mx-auto'>
+            <NavDropdown.Item as={Link} eventKey="/graphic-design/logo">Logo</NavDropdown.Item>
+            <NavDropdown.Item as={Link} eventKey="/graphic-design/branding">Branding</NavDropdown.Item>
+            <NavDropdown.Item as={Link} eventKey="/graphic-design/business-cards">Business Cards</NavDropdown.Item>
+            <NavDropdown.Item as={Link} eventKey="/graphic-design/essentials">Essentials</NavDropdown.Item>
+          
+          </NavDropdown>
+
             <NavDropdown.Item as={Link} eventKey="/software-solutions">Software Solutions</NavDropdown.Item>
             <NavDropdown.Item as={Link} eventKey="/graphic-design">Graphic Design Work</NavDropdown.Item>
             <NavDropdown.Item as={Link} eventKey="/graphic-design/logo">Logo</NavDropdown.Item>
