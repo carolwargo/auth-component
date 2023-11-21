@@ -64,11 +64,11 @@ Our network of trusted designers can craft distinctive designs tailored to every
             <p>Receive your files & downloads and discuss printing options.</p>
       </Col>
 </Row>
-
+<br></br>
 <Row className="row d-flex align-items-center justify-content-center">
         <Col className="d-flex align-items-center justify-content-center">
-        <a href='#graphic-design-product' className='btn btn d-flex align-items-center'>
-  Choose a product to get started <FaArrowRight className='ms-2' />
+        <a href='#graphic-design-product' className='d-flex align-items-center'>
+  See product options to get started <FaArrowRight className='ms-2' />
 </a>
           </Col>
   </Row>
@@ -76,7 +76,7 @@ Our network of trusted designers can craft distinctive designs tailored to every
 <br></br>
 <br></br>
 <br></br>
-
+<br></br>
 <Container className="graphic-design-product" id="graphic-design-product">
 <Row className="row d-flex align-items-center justify-content-center">
 
@@ -85,9 +85,10 @@ Our network of trusted designers can craft distinctive designs tailored to every
   </h3>
   </Row>
 <Row className="row d-flex align-items-center justify-content-center text-center">
-<p>Not sure what you are looking for? <span>
+<p>Know what you need without looking? <span>
+
   <a href='/graphic-design/contact-form'>
-   Let us help to define your need <FaArrowRight className='ms-2'/>
+    connect with a designer<FaArrowRight className='ms-2'/>
 </a>
 </span>
 </p>
@@ -203,7 +204,7 @@ Our network of trusted designers can craft distinctive designs tailored to every
 <br></br>
     <Row className="row d-flex align-items-center justify-content-center text-center">
 <p>Still not sure what you are looking for? <span>
-  <a href='/'>
+  <a href='/graphic-design/contact-form'>
    Let us help to define your need <FaArrowRight className='ms-2'/>
 </a>
 </span>
@@ -220,7 +221,7 @@ Our network of trusted designers can craft distinctive designs tailored to every
 <Container className="graphic-design-logo-intro" id="graphic-design-logo-intro">
          
           <h3>
-            <b>Get a professionally designed logo that you love!</b>
+            <b>Get a pro to design a logo that you love!</b>
           </h3>
           <p>...the most important visual identifier of your brand.</p>
 </Container>
