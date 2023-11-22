@@ -39,7 +39,7 @@ const WebDesign = () => {
           target='_blank'
           href='https://www.youtube.com/watch?v=c9B4TPnak1A'
         >
-         Graphic Design
+         Web Design
         </MDBBtn>
         <MDBBtn
           className='m-2'
@@ -55,7 +55,111 @@ const WebDesign = () => {
     </div>
   </div>
 </div>
+{/*end of header*/}
 
+
+{/*start scroll spy*/}
+<div className="row">
+  <div className="col-4">
+    <nav id="navbar-example3" className="h-100 flex-column align-items-stretch pe-4 border-end">
+      <nav className="nav nav-pills flex-column">
+        <a className="nav-link" href="#item-1">Item 1</a>
+        <nav className="nav nav-pills flex-column">
+          <a className="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+          <a className="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+        </nav>
+        <a className="nav-link" href="#item-2">Item 2</a>
+        <a className="nav-link" href="#item-3">Item 3</a>
+        <nav className="nav nav-pills flex-column">
+          <a className="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+          <a className="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+        </nav>
+      </nav>
+    </nav>
+  </div>
+
+  <div className="col-8">
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" className="scrollspy-example-2" tabIndex="0">
+      <div id="item-1">
+        <h4>Item 1</h4>
+        <p>...</p>
+      </div>
+      <div id="item-1-1">
+        <h5>Item 1-1</h5>
+        <p>...</p>
+      </div>
+      <div id="item-1-2">
+        <h5>Item 1-2</h5>
+        <p>...</p>
+      </div>
+      <div id="item-2">
+        <h4>Item 2</h4>
+        <p>...</p>
+      </div>
+      <div id="item-3">
+        <h4>Item 3</h4>
+        <p>...</p>
+      </div>
+      <div id="item-3-1">
+        <h5>Item 3-1</h5>
+        <p>...</p>
+      </div>
+      <div id="item-3-2">
+        <h5>Item 3-2</h5>
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{/*start scroll spy*/}
+<div className="row">
+  <div className="col-4">
+    <div id="list-example" className="list-group">
+      <a className="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+      <a className="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+      <a className="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+      <a className="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+    </div>
+  </div>
+  <div className="col-8">
+    <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" className="scrollspy-example" tabIndex="0">
+      <h4 id="list-item-1">Database</h4>
+      <p> cloud services</p>
+      <h4 id="list-item-2">E-Commerce</h4>
+      <p>payment links, catalog services, storefront</p>
+      <h4 id="list-item-3">Mobile Applications</h4>
+      <p>...</p>
+      <h4 id="list-item-4">User Management & Authentication</h4>
+      <p>Authentication, customer accounts, dashboard- database interaction</p>
+      <h4 id="list-item-4">Forms</h4>
+      <p>...</p>
+      <h4 id="list-item-4">Auth & authorizations</h4>
+      <p>...</p>
+<h4>User Management: Identity and Access Management</h4>
+<p>Purpose: Creating, updating, and managing user accounts. This includes user registration, login, logout, password reset, and account profile management.</p>
+<p>Common Features: User registration forms, authentication (login/logout), account settings, password recovery.</p>
+<p>Common Technologies: JWT (JSON Web Tokens), OAuth, OpenID Connect, user databases (SQL or NoSQL), authentication libraries (e.g., Passport.js).</p>
+    
+<h4>User Authentication and Authorization:</h4>
+<p>Category: Security</p>
+<p>Purpose: Verifying the identity of users and determining what actions or resources they are allowed to access (authorization).
+</p>
+<p>Common Features: Secure login, multi-factor authentication (if needed), role-based access control (RBAC), permissions management.
+</p>
+<p>Common Technologies: JWT (JSON Web Tokens), OAuth, access control lists (ACLs), authorization middleware, Firebase Authentication.
+    </p>
+    </div>
+  </div>
+</div>
+<br></br>
+<br></br>
+{/*start of web design*/}
 </div>
       <div>
         <Container className="web-design" id="responsive-web-design">

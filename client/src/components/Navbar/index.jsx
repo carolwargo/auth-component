@@ -20,6 +20,7 @@ function NavDropdownExample() {
         <Nav.Link as={Link} to="/">Home</Nav.Link>
         <Nav.Link as={Link} to="/about">About</Nav.Link>
         <Nav.Link as={Link} to="/graphic-design">Graphic Design</Nav.Link>
+        <Nav.Link as={Link} to="/web-dev">Web Development</Nav.Link>
         </Nav>
       
 
