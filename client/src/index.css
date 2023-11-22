@@ -12,3 +12,7 @@ code {
     monospace;
 }
 
+.scrollspy-webdev {
+  overflow-y: scroll !important;
+  height: 500px !important; /* Set a height for the scrollable area */
+}
