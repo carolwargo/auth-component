@@ -20,13 +20,31 @@ export default function intro() {
 
     
     <div style={{paddingTop:"2rem", paddingBottom:"2rem"}}>
-
+<h1 className="text-center" style={{fontFamily:'Great Vibes', color:'#BF6A6A',fontSize:"2rem"}}>SERVICE GALLERY</h1>  
+     
  {/* start 2 card container; Web Design & Graphic Design */}
-<Container>
-  <Row className="d-flex justify-content-center"
-    style={{}}>
-    <h1 className="text-center" style={{fontFamily:'Great Vibes', color:'#BF6A6A',fontSize:"2rem"}}>SERVICE GALLERY</h1>  
+<Container className="p-5">
+<Row className="d-flex justify-content-center">
+<Col md={6} className="d-flex align-items-center justify-content-center" style={{ paddingBottom: '1rem' }}>
+        <h4>Graphic Design</h4>
+      </Col>
       <Col md={6}
+      style={{paddingBottom:"1rem"}}>
+      <motion.div whileHover={{ scale: .95 }} whileTap={{ scale: 0.9 }}>
+    
+      <Card
+         >
+         <Link to="/graphic-design"><Card.Img variant="top" src={CustomG} /></Link> 
+       
+      </Card>
+   
+      </motion.div>
+      </Col>
+      </Row>
+      <br></br>
+      <br></br>
+  <Row className="d-flex justify-content-center">
+     <Col md={6}
       style={{paddingBottom:"1rem"}}>
       <motion.div whileHover={{ scale: .95 }} whileTap={{ scale: 0.9 }}>
       
@@ -39,22 +57,11 @@ export default function intro() {
     
       </motion.div>
       </Col>
-
-      <Col md={6}
-      style={{paddingBottom:"1rem"}}>
-      <motion.div whileHover={{ scale: .95 }} whileTap={{ scale: 0.9 }}>
-    
-      <Card
-         style={{boxShadow: '0 4px 8px rgba(0, 0, 255, 0.5)'}}
-         >
-         <Link to="/graphic-design"><Card.Img variant="top" src={CustomG} /></Link> 
-       
-      </Card>
-   
-      </motion.div>
-      </Col>
+      <Col md={6} className="d-flex align-items-center justify-content-center" style={{ paddingBottom: '1rem' }}>
+      <h4>Web Design & Development</h4>
+    </Col>
       </Row>
-</Container>
+      </Container>
  {/* end 2 card container; Web Design & Graphic Design */}
 
 

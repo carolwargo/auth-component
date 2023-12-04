@@ -21,6 +21,7 @@ import Footer from "./components/Footer/index";
 import Navbar from "./components/Navbar/index";
 import Signup from "./views/Signup/Signup";
 import Login from "./views/Login/Login";
+import Test from "./views/Test/Test";
 import "bootstrap/dist/css/bootstrap.css";
 
 // Put any other imports below so that CSS from your
@@ -47,12 +48,13 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/web-dev" element={<WebDev/>} />
           <Route path="/graphic-design" element={<GraphicDesign />} />
+          <Route path="/test" element={<Test />} />
           <Route path="/logo" element={<Logo />} />
           <Route path="/essentials" element={<Essentials />} />
           <Route path="/branding" element={<Branding />} />
           <Route path="/business-cards" element={<BusinessCards />} />
           <Route path="/graphic-design/contact-form" element={<ContactForm />} />
-
+          
           <Route path="/software-development" element={<SoftwareDevelopment />} />
           <Route path="/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/ecommerce" element={<Ecommerce />} />

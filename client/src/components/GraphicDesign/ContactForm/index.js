@@ -17,7 +17,7 @@ const ContactForm = () => {
                 value="Mark"
                 required
               />
-              <label for="validationDefault01" className="form-label">
+              <label htmlFor="validationDefault01" className="form-label">
                 First name
               </label>
             </div>
@@ -31,7 +31,7 @@ const ContactForm = () => {
                 value="Otto"
                 required
               />
-              <label for="validationDefault02" className="form-label">
+              <label htmlFor="validationDefault02" className="form-label">
                 Last name
               </label>
             </div>
@@ -48,7 +48,7 @@ const ContactForm = () => {
                 aria-describedby="inputGroupPrepend2"
                 required
               />
-              <label for="validationDefaultUsername" className="form-label">
+              <label htmlFor="validationDefaultUsername" className="form-label">
                 Username
               </label>
             </div>
@@ -61,7 +61,7 @@ const ContactForm = () => {
                 id="validationDefault03"
                 required
               />
-              <label for="validationDefault03" className="form-label">
+              <label htmlFor="validationDefault03" className="form-label">
                 City
               </label>
             </div>
@@ -74,7 +74,7 @@ const ContactForm = () => {
                 id="validationDefault05"
                 required
               />
-              <label for="validationDefault05" className="form-label">
+              <label htmlFor="validationDefault05" className="form-label">
                 Zip
               </label>
             </div>
@@ -88,7 +88,7 @@ const ContactForm = () => {
                 id="invalidCheck2"
                 required
               />
-              <label className="form-check-label" for="invalidCheck2">
+              <label className="form-check-label" htmlFor="invalidCheck2">
                 Agree to terms and conditions
               </label>
             </div>
@@ -118,7 +118,7 @@ const ContactForm = () => {
                   style={{ color: "gray" }}
                 />
                 <label
-                  for="validationCustom01"
+                  htmlFor="validationCustom01"
                   className="form-label"
                   style={{ paddingLeft: "12px" }}
                 ></label>
@@ -137,7 +137,7 @@ const ContactForm = () => {
                   style={{ color: "gray" }}
                 />
                 <label
-                  for="validationCustom02"
+                  htmlFor="validationCustom02"
                   className="form-label"
                   style={{ paddingLeft: "12px" }}
                 ></label>
@@ -156,7 +156,7 @@ const ContactForm = () => {
                   style={{ color: "gray" }}
                 />
                 <label
-                  for="validationCustom03"
+                  htmlFor="validationCustom03"
                   className="form-label"
                   style={{ paddingLeft: "12px" }}
                 ></label>
@@ -177,7 +177,7 @@ const ContactForm = () => {
                   style={{ color: "gray" }}
                 />
                 <label
-                  for="validationCustom04"
+                  htmlFor="validationCustom04"
                   className="form-label"
                   style={{ paddingLeft: "12px" }}
                 ></label>
@@ -196,7 +196,7 @@ const ContactForm = () => {
                   style={{ color: "gray" }}
                 />
                 <label
-                  for="validationCustom05"
+                  htmlFor="validationCustom05"
                   className="form-label"
                   style={{ paddingLeft: "12px" }}
                 ></label>
@@ -215,7 +215,7 @@ const ContactForm = () => {
                   style={{ color: "gray" }}
                 />
                 <label
-                  for="validationCustom06"
+                  htmlFor="validationCustom06"
                   className="form-label"
                   style={{ paddingLeft: "12px" }}
                 ></label>
@@ -233,7 +233,7 @@ const ContactForm = () => {
                   style={{ color: "gray" }}
                 />
                 <label
-                  for="validationCustom07"
+                  htmlFor="validationCustom07"
                   className="form-label"
                   style={{ paddingLeft: "12px" }}
                 ></label>
@@ -251,7 +251,7 @@ const ContactForm = () => {
                 />
                 <label
                   className="form-check-label"
-                  for="invalidCheck"
+                  htmlFor="invalidCheck"
                   style={{ paddingLeft: "12px", color: "gray" }}
                 >
                   Agree to terms and conditions
@@ -277,7 +277,7 @@ const ContactForm = () => {
         <Container>
           <form>
             <div className="form-group">
-              <label for="exampleFormControlInput1">Name</label>
+              <label htmlFor="exampleFormControlInput1">Name</label>
               <input
                 type="name"
                 className="form-control"
@@ -286,7 +286,7 @@ const ContactForm = () => {
               />
             </div>
             <div className="form-group">
-              <label for="exampleFormControlInput1">Email address</label>
+              <label htmlFor="exampleFormControlInput1">Email address</label>
               <input
                 type="email"
                 className="form-control"
@@ -295,7 +295,7 @@ const ContactForm = () => {
               />
             </div>
             <div className="form-group">
-              <label for="exampleFormControlInput1">Phone Number</label>
+              <label htmlFor="exampleFormControlInput1">Phone Number</label>
               <input
                 type="phone"
                 className="form-control"
@@ -305,7 +305,7 @@ const ContactForm = () => {
             </div>
 
             <div className="form-group">
-              <label for="exampleFormControlSelect1">Company</label>
+              <label htmlFor="exampleFormControlSelect1">Company</label>
               <select className="form-control" id="exampleFormControlSelect1">
               <option value="1">Company</option>
                 <option value="2">Individual</option>
@@ -313,7 +313,7 @@ const ContactForm = () => {
             </div>
 
             <div className="form-group">
-              <label for="exampleFormControlSelect1">Service</label>
+              <label htmlFor="exampleFormControlSelect1">Service</label>
               <select className="select">
                 <option value="1">Business Cards</option>
                 <option value="2">Start-Up Essentials</option>
@@ -323,7 +323,7 @@ const ContactForm = () => {
             </div>
 
             <div className="form-group">
-              <label for="exampleFormControlSelect1">Timeframe</label>
+              <label htmlFor="exampleFormControlSelect1">Timeframe</label>
               <select className="select">
                 <option value="1">1-4 weeks</option>
                 <option value="2">1-3 months</option>
@@ -333,7 +333,7 @@ const ContactForm = () => {
             </div>
 
             <div className="form-group">
-              <label for="exampleFormControlFile1">File Upload</label>
+              <label htmlFor="exampleFormControlFile1">File Upload</label>
               <input
                 type="file"
                 className="form-control-file"
@@ -342,7 +342,7 @@ const ContactForm = () => {
             </div>
 
             <div className="form-group">
-              <label for="exampleFormControlTextarea1">Message</label>
+              <label htmlFor="exampleFormControlTextarea1">Message</label>
               <textarea
                 className="form-control"
                 id="exampleFormControlTextarea1"

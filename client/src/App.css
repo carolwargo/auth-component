@@ -23,3 +23,21 @@
     text-decoration: underline;
     color: crimson;  /* Notes: Hover effect-links set to transition between text color and underline on hover.*/
 }
+
+.circle-frame {
+ 
+  border-radius: 50%;
+  border: 2px solid black;
+  padding: 15px;
+  overflow: hidden;
+  background-color: white; /* You can change the background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-frame img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}

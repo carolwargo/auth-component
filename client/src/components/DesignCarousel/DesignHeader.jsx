@@ -59,7 +59,7 @@ export default function App() {
               <h5 className='mb-4'>Best &amp; free guide of responsive web design</h5>
               <MDBBtn
                 className='m-2'
-                tag='a'
+                tag='button'
                 outline
                 size='lg'
                 rel='nofollow'
@@ -70,7 +70,7 @@ export default function App() {
               </MDBBtn>
               <MDBBtn
                 className='m-2'
-                tag='a'
+                tag='button'
                 outline
                 size='lg'
                 target='_blank'
