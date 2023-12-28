@@ -1,358 +1,202 @@
-import React from "react";
-import { Container } from "react-bootstrap";
+import React, { useState } from "react";
 
 const ContactForm = () => {
+  const [firstName, setFirstName] = useState("Mark");
+  const [lastName, setLastName] = useState("Otto");
+  const [username, setUsername] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zip, setZip] = useState("");
+  const [agree, setAgree] = useState(false);
+
+  const [isValidFirstName, setIsValidFirstName] = useState(true);
+  const [isValidLastName, setIsValidLastName] = useState(true);
+  const [isValidUsername, setIsValidUsername] = useState(true);
+  const [isValidCity, setIsValidCity] = useState(true);
+  const [isValidState, setIsValidState] = useState(true);
+  const [isValidZip, setIsValidZip] = useState(true);
+  const [isValidAgree, setIsValidAgree] = useState(true);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Validation logic
+    if (firstName.trim() === "") {
+      setIsValidFirstName(false);
+      return;
+    }
+
+    if (lastName.trim() === "") {
+      setIsValidLastName(false);
+      return;
+    }
+
+    if (username.trim() === "") {
+      setIsValidUsername(false);
+      return;
+    }
+
+    if (city.trim() === "") {
+      setIsValidCity(false);
+      return;
+    }
+
+    if (state.trim() === "") {
+      setIsValidState(false);
+      return;
+    }
+
+    if (zip.trim() === "" || !/^\d{5}$/.test(zip)) {
+      setIsValidZip(false);
+      return;
+    }
+
+    if (!agree) {
+      setIsValidAgree(false);
+      return;
+    }
+
+    // If all validations pass, proceed with form submission
+    const formData = {
+      firstName,
+      lastName,
+      username,
+      city,
+      state,
+      zip,
+      agree,
+    };
+    console.log("Form Data:", formData);
+  };
+
   return (
     <div>
-      <br></br>
-      <br></br>
-      <Container>
-        <form className="row g-3 p-2">
-          <div className="col-md-4">
-            <div className="form-outline">
-              <input
-                type="text"
-                className="form-control"
-                id="validationDefault01"
-                value="Mark"
-                required
-              />
-              <label htmlFor="validationDefault01" className="form-label">
-                First name
-              </label>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="form-outline">
-              <input
-                type="text"
-                className="form-control"
-                id="validationDefault02"
-                value="Otto"
-                required
-              />
-              <label htmlFor="validationDefault02" className="form-label">
-                Last name
-              </label>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="input-group form-outline">
-              <span className="input-group-text" id="inputGroupPrepend2">
-                @
-              </span>
-              <input
-                type="text"
-                className="form-control"
-                id="validationDefaultUsername"
-                aria-describedby="inputGroupPrepend2"
-                required
-              />
-              <label htmlFor="validationDefaultUsername" className="form-label">
-                Username
-              </label>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-outline">
-              <input
-                type="text"
-                className="form-control"
-                id="validationDefault03"
-                required
-              />
-              <label htmlFor="validationDefault03" className="form-label">
-                City
-              </label>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-outline">
-              <input
-                type="text"
-                className="form-control"
-                id="validationDefault05"
-                required
-              />
-              <label htmlFor="validationDefault05" className="form-label">
-                Zip
-              </label>
-            </div>
-          </div>
-          <div className="col-12">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value=""
-                id="invalidCheck2"
-                required
-              />
-              <label className="form-check-label" htmlFor="invalidCheck2">
-                Agree to terms and conditions
-              </label>
-            </div>
-          </div>
-          <div className="col-12">
-            <button className="btn btn-primary" type="submit">
-              Submit form
-            </button>
-          </div>
-        </form>
-      </Container>
-      <Container>
-        <br></br>
-        <h1>design FORM INQUIRYDHFASH;</h1>
-        <br></br>
-        <br></br>
-        <Container>
-          <form className="row g-2 needs-validation" novalidate>
-            <div className="col-md-3">
-              <div className="form-outline">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom01"
-                  value="First Name"
-                  required
-                  style={{ color: "gray" }}
-                />
-                <label
-                  htmlFor="validationCustom01"
-                  className="form-label"
-                  style={{ paddingLeft: "12px" }}
-                ></label>
-                <div className="valid-feedback">Looks good!</div>
-              </div>
-            </div>
+    <form className="row g-3 needs-validation" noValidate onSubmit={handleSubmit}>
+      <div className="col-md-4">
+        <label htmlFor="validationCustom01" 
+        className="form-label">
+          First name
+        </label>
+        <input
+          type="text"
+          className={`form-control 
+          ${isValidFirstName ? "" : "is-invalid"}`}
+          id="validationCustom01"
+          value={firstName}
+          onChange={(e) => 
+            setFirstName(e.target.value)}
+          required
+        />
+        <div className="valid-feedback">Looks good!</div>
+      </div>
+      <div className="col-md-4">
+        <label htmlFor="validationCustom02" className="form-label">
+          Last name
+        </label>
+        <input
+          type="text"
+          className={`form-control ${isValidLastName ? "" : "is-invalid"}`}
+          id="validationCustom02"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          required
+        />
+        <div className="valid-feedback">Looks good!</div>
+      </div>
+      <div className="col-md-4">
+        <label htmlFor="validationCustomUsername" className="form-label">
+          Username
+        </label>
+        <div className="input-group has-validation">
+          <span className="input-group-text" id="inputGroupPrepend">
+            @
+          </span>
+          <input
+            type="text"
+            className={`form-control ${isValidUsername ? "" : "is-invalid"}`}
+            id="validationCustomUsername"
+            aria-describedby="inputGroupPrepend"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <div className="invalid-feedback">Please choose a username.</div>
+        </div>
+      </div>
+      <div className="col-md-6">
+        <label 
+        htmlFor="validationCustom03" 
+        className="form-label">
+          City
+        </label>
+        <input
+          type="text"
+          className={`form-control ${isValidCity ? "" : "is-invalid"}`}
+          id="validationCustom03"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          required
+        />
+        <div className="invalid-feedback">Please provide a valid city.</div>
+      </div>
+      <div className="col-md-3">
+        <label 
+        htmlFor="validationCustom04" 
+        className="form-label">
+          State
+        </label>
+        <select
+          className={`form-select ${isValidState ? "" : "is-invalid"}`}
+          id="validationCustom04"
+          value={state}
+          onChange={(e) => setState(e.target.value)}
+          required
+        >
+          <option disabled value="">
+            Choose...
+          </option>
+          <option>...</option>
+        </select>
+        <div className="invalid-feedback">Please select a valid state.</div>
+      </div>
+      <div className="col-md-3">
+        <label htmlFor="validationCustom05" className="form-label">
+          Zip
+        </label>
+        <input
+          type="text"
+          className={`form-control ${isValidZip ? "" : "is-invalid"}`}
+          id="validationCustom05"
+          value={zip}
+          onChange={(e) => setZip(e.target.value)}
+          required
+        />
+        <div className="invalid-feedback">Please provide a valid zip.</div>
+      </div>
 
-            <div className="col-md-3">
-              <div className="form-outline">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom02"
-                  value="Last Name"
-                  required
-                  style={{ color: "gray" }}
-                />
-                <label
-                  htmlFor="validationCustom02"
-                  className="form-label"
-                  style={{ paddingLeft: "12px" }}
-                ></label>
-                <div className="valid-feedback">Looks good!</div>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="form-outline">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom03"
-                  value="Email"
-                  required
-                  style={{ color: "gray" }}
-                />
-                <label
-                  htmlFor="validationCustom03"
-                  className="form-label"
-                  style={{ paddingLeft: "12px" }}
-                ></label>
-                <div className="invalid-feedback">
-                  Please provide a valid email.
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="form-outline">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom04"
-                  value="Phone Number"
-                  required
-                  style={{ color: "gray" }}
-                />
-                <label
-                  htmlFor="validationCustom04"
-                  className="form-label"
-                  style={{ paddingLeft: "12px" }}
-                ></label>
-                <div className="valid-feedback">Looks good!</div>
-              </div>
-            </div>
-
-            <div className="col-md-6">
-              <div className="form-outline">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom05"
-                  value="Street Address"
-                  required
-                  style={{ color: "gray" }}
-                />
-                <label
-                  htmlFor="validationCustom05"
-                  className="form-label"
-                  style={{ paddingLeft: "12px" }}
-                ></label>
-                <div className="valid-feedback">Looks good!</div>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="form-outline">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom06"
-                  value="City"
-                  required
-                  style={{ color: "gray" }}
-                />
-                <label
-                  htmlFor="validationCustom06"
-                  className="form-label"
-                  style={{ paddingLeft: "12px" }}
-                ></label>
-                <div className="invalid-feedback">Please provide a valid city.</div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="form-outline">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom07"
-                  value="Zip Code"
-                  required
-                  style={{ color: "gray" }}
-                />
-                <label
-                  htmlFor="validationCustom07"
-                  className="form-label"
-                  style={{ paddingLeft: "12px" }}
-                ></label>
-                <div className="invalid-feedback">Please provide a valid zip.</div>
-              </div>
-            </div>
-            <div className="col-12">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="invalidCheck"
-                  required
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor="invalidCheck"
-                  style={{ paddingLeft: "12px", color: "gray" }}
-                >
-                  Agree to terms and conditions
-                </label>
-                <div className="invalid-feedback">
-                  You must agree before submitting.
-                </div>
-              </div>
-            </div>
-            <br></br>
-            <div className="col-12">
-              <button className="btn btn-primary" type="submit">
-                Submit form
-              </button>
-            </div>
-          </form>
-        </Container>
-
-        <br></br>
-        <br></br>
-        <br></br>
-
-        <Container>
-          <form>
-            <div className="form-group">
-              <label htmlFor="exampleFormControlInput1">Name</label>
-              <input
-                type="name"
-                className="form-control"
-                id="exampleFormControlInput1"
-                placeholder="    Name"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="exampleFormControlInput1">Email address</label>
-              <input
-                type="email"
-                className="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Email"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="exampleFormControlInput1">Phone Number</label>
-              <input
-                type="phone"
-                className="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Phone Number"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="exampleFormControlSelect1">Company</label>
-              <select className="form-control" id="exampleFormControlSelect1">
-              <option value="1">Company</option>
-                <option value="2">Individual</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="exampleFormControlSelect1">Service</label>
-              <select className="select">
-                <option value="1">Business Cards</option>
-                <option value="2">Start-Up Essentials</option>
-                <option value="3">Logo</option>
-                <option value="4">Branding</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="exampleFormControlSelect1">Timeframe</label>
-              <select className="select">
-                <option value="1">1-4 weeks</option>
-                <option value="2">1-3 months</option>
-                <option value="3">3-6 months</option>
-                <option value="4">6+ months</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="exampleFormControlFile1">File Upload</label>
-              <input
-                type="file"
-                className="form-control-file"
-                id="exampleFormControlFile1"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="exampleFormControlTextarea1">Message</label>
-              <textarea
-                className="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-                placeholder="Message"
-              ></textarea>
-            </div>
-          </form>
-        </Container>
-      </Container>
+      <div className="col-12">
+        <div className="form-check">
+          <input
+            className={`form-check-input ${isValidAgree ? "" : "is-invalid"}`}
+            type="checkbox"
+            value=""
+            id="invalidCheck"
+            required
+            checked={agree}
+            onChange={() => setAgree(!agree)}
+          />
+          <label className="form-check-label" htmlFor="invalidCheck">
+            Agree to terms and conditions
+          </label>
+          <div className="invalid-feedback">You must agree before submitting.</div>
+        </div>
+      </div>
+      <div className="col-12">
+        <button className="btn btn-primary" type="submit">
+          Submit form
+        </button>
+      </div>
+    </form>
     </div>
   );
 };

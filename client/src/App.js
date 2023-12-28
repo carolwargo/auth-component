@@ -22,7 +22,6 @@ import Footer from "./components/Footer/index";
 import Navbar from "./components/Navbar/index";
 import Signup from "./views/Signup/Signup";
 import PrivacyPolicy from "./components/Terms/privacyPolicy.js";
-import Upload from "./components/Upload/upload.js";
 import Login from "./views/Login/Login";
 import Test from "./views/Test/Test";
 import GraphicBrief from "./components/GraphicDesign/GraphicBrief/index.jsx";
@@ -69,7 +68,6 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signup-terms" element={<SignupTerms />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/upload" element={<Upload />} />
           <Route path="/login" element={<Login />} />
           {/* Define a route that will take in variable data */}
         </Routes>

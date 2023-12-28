@@ -4,6 +4,7 @@ function GraphicBrief() {
   // State for radio buttons
   const [useType, setUseType] = useState("");
   const [serviceType, setServiceType] = useState("");
+  //const [colorSelect, setColorSelect] = useState("");
     const [textarea, setTextarea] = useState("");
 const [preference1, setPreference1] = useState("");
     // State for text inputs
@@ -20,6 +21,12 @@ const [preference1, setPreference1] = useState("");
   const handleServiceType = (event) => {
     setServiceType(event.target.value);
   };
+
+  /*
+  const handleColorSelect = (event) => {
+    setColorSelect(event.target.value);
+    };
+*/
 
   const handleTextareaChange = (event) => {
     setTextarea(event.target.value);
@@ -56,14 +63,14 @@ const [preference1, setPreference1] = useState("");
       <br></br>
       <div className="row">
         <form onSubmit={handleSubmit} className="col-md-8">
-          <div>
+          <div className="form-content">
             <p>
               <b>What is your use & need?</b>
             </p>
             <p>
               <b>1. Is this for personal or business use? </b>
             </p>
-            <div style={{ paddingLeft: "2rem" }}>
+            <div className="form-use" style={{ paddingLeft: "2rem" }}>
               <fieldset className="row mb-2">
                 <legend className="col-form-label col-md-6 pt-0">
                   Choose An Option:
@@ -125,7 +132,7 @@ const [preference1, setPreference1] = useState("");
             </div>
 
             <p><b>2. What do you need from us? </b></p> 
-            <div style={{ paddingLeft: "2rem" }}>
+            <div className="form-need"style={{ paddingLeft: "2rem" }}>
               <fieldset className="row mb-2">
                 <legend className="col-form-label col-md-6 pt-0">
                   Choose An Option:
@@ -185,10 +192,133 @@ const [preference1, setPreference1] = useState("");
                 </div>
               </fieldset>
             </div>
-
             <div >
+{/*}
+            <div className="form-color" style={{ paddingLeft: "2rem" }}>
+           <p><b>2. What colors do you want used in your design? </b><br></br><i style={{marginLeft:'1rem'}}>"select all that apply" </i></p> 
+
+              <fieldset className="row mb-2">
+                <legend className="col-form-label col-md-6 pt-0">
+                  Choose Your Color Palette:
+                </legend>
+                <div className="col-md-6">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input border border-dark"
+                      type="radio"
+                      name="gridRadios"
+                      id="gridRadiosBlue"
+                      value="Blue"
+                      checked={colorSelect === "Blue"}
+                      onChange={handleColorSelect}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="gridRadiosBlue"
+                    >
+                      Blue
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input border border-dark"
+                      type="radio"
+                      name="gridRadios"
+                      id="gridRadiosGreen"
+                      value="Green"
+                      checked={colorSelect === "Green"}
+                      onChange={handleColorSelect}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="gridRadiosGreen"
+                    >
+                      Green
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input border border-dark"
+                      type="radio"
+                      name="gridRadios"
+                      id="gridRadiosOrange"
+                      value="Orange"
+                      checked={colorSelect === "Orange"}
+                      onChange={handleColorSelect}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="gridRadiosOrange"
+                    >
+                      Orange
+                    </label>
+                  </div>
+
+                  <div className="form-check">
+                    <input
+                      className="form-check-input border border-dark"
+                      type="radio"
+                      name="gridRadios"
+                      id="gridRadiosPink"
+                      value="Pink"
+                      checked={colorSelect === "Pink"}
+                      onChange={handleColorSelect}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="gridRadiosPink"
+                    >
+                      Pink
+                    </label>
+                  </div>
+
+                  <div className="form-check">
+                    <input
+                      className="form-check-input border border-dark"
+                      type="radio"
+                      name="gridRadios"
+                      id="gridRadiosPurple"
+                      value="Purple"
+                      checked={colorSelect === "Purple"}
+                      onChange={handleColorSelect}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="gridRadiosPurple"
+                    >
+                      Purple
+                    </label>
+                  </div>
+
+                  <div className="form-check">
+                    <input
+                      className="form-check-input border border-dark"
+                      type="radio"
+                      name="gridRadios"
+                      id="gridRadiosYellow"
+                      value="Yellow"
+                      checked={colorSelect === "Yellow"}
+                      onChange={handleColorSelect}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="gridRadiosYellow"
+                    >
+                      Yellow
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+*/}
+
+
+
+
+
+
 <b>3. Tell Us In Your Words About Your Vision or Product: </b>
-    <p><i>Example: "I need a 4x6 postcard designed for a grand opening event at a John Doe Dealership, located at 123 Anywhere St. MyTown, USA. I want a sparkling aesthetic, with red and white text, calligraphy font, with a picture of a car. The date is 01/01/2021 and I need it by 12/01/2020.  I want to use this for a Facebook ad, and I want to print 1000 copies." 
+    <p style={{paddingLeft:'2em', paddingRight: '2rem', fontSize:'12px', color:'gray'}}><b>EXAMPLE:</b><br></br> <i>"I need a 4x6 postcard designed for a grand opening event at a John Doe Dealership, located at 123 Anywhere St. MyTown, USA. I want a sparkling aesthetic, with red and white text, calligraphy font, with a picture of a car. The date is 01/01/2021 and I need it by 12/01/2020.  I want to use this for a Facebook ad, and I want to print 1000 copies." 
    </i></p> 
 
     <label htmlFor="exampleFormControlTextarea1">
@@ -203,12 +333,13 @@ const [preference1, setPreference1] = useState("");
     </textarea>
   </div>
 
-
+  <br></br>
+<br></br>
   <div>
-  <label className="col-form-label" htmlFor="specificSizeSelect1">
-    <b>4. Choose A Product From The Following List Of Options:</b>
-    <p>If you do not see what you are looking for, choose "Not Listed".</p>
-  </label>
+    <p> <b>4. Choose A Product From The Following List Of Options:</b></p>
+    <p style={{paddingLeft:'2em', paddingRight: '2rem', fontSize:'12px', color:'gray'}}>If you do not see what you are looking for, choose "Not Listed".</p>
+  <label className="col-form-label" htmlFor="specificSizeSelect1"> 
+  Choose A Product</label>
   <select
     className="form-select"
     id="specificSizeSelect1"
@@ -242,13 +373,13 @@ const [preference1, setPreference1] = useState("");
     <option value="20">Not Listed</option>
   </select>
 </div>
-
-
+<br></br>
+<br></br>
 <div className="row">
 <div>
 <p><b>5. Please Provide Your Contact Information: </b></p>
-    <p>In addition to contact information, include anything you would like us to know regarding communication in the <i>"Additional Comments"</i> section provided. <span>
-    <i>Examples: Preferred method of communication, time of day, and/or alternative point of contact.</i></span></p>
+    <p style={{paddingLeft:'2em', paddingRight: '2rem', fontSize:'12px', color:'gray'}}>In addition to contact information, include anything you would like us to know regarding communication in the <i>"Additional Comments"</i> section provided. <span>
+   <br></br> <i><b>EXAMPLE:</b> Preferred method of communication, time of day, and/or alternative point of contact.</i></span></p>
     </div>
 
     <div className="col-md-4 mb-2">
