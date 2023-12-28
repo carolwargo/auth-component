@@ -7,6 +7,7 @@ import { BsArrowThroughHeart } from "react-icons/bs";
 import { PiTShirtDuotone } from "react-icons/pi";
 import { IoCloudUploadOutline } from "react-icons/io5";
 
+
 const TeamShop = () => {
   const [preference1, setPreference1] = useState("");
     const [textarea, setTextarea] = useState("");
@@ -130,7 +131,7 @@ const TeamShop = () => {
               <br></br>
               <div className="upload">
                 <p className="mb-1">Upload photo if desired.</p>
-                
+         
                 <p className="p-1 border border-black rounded text-center">Upload <IoCloudUploadOutline/></p>
                 </div>
           
@@ -180,6 +181,7 @@ const TeamShop = () => {
             </ul>
          </ol>
             </div>
+  
           {/* ^ end senior night right col*/}
         </div>
         {/* ^ end senior night row*/}
