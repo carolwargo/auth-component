@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
 import Home from "./views/Home/Home";
+import TeamShop from "./components/HomeOptions/TeamShop.jsx";
 import About from "./views/About/About";
 import Contact from "./views/Contact/Contact";
 import WebDev from "./views/WebDev/WebDev";
@@ -11,7 +12,7 @@ import GraphicDesign from "./views/GraphicDesign/GraphicDesign";
 import SoftwareDevelopment from "./views/SoftwareDevelopment/SoftwareDevelopment";
 import DigitalMarketing from "./views/DigitalMarketing/DigitalMarketing"; 
 import Ecommerce from "./views/Ecommerce/Ecommerce";  
-
+import SignupTerms from "./components/Terms/signupTerms.js";
 import Logo from "./views/Logo/Logo";
 import Essentials from "./views/Essentials/Essentials";
 import Branding from "./views/Branding/Branding";
@@ -20,6 +21,8 @@ import ContactForm from "./components/GraphicDesign/ContactForm/index.js";
 import Footer from "./components/Footer/index";
 import Navbar from "./components/Navbar/index";
 import Signup from "./views/Signup/Signup";
+import PrivacyPolicy from "./components/Terms/privacyPolicy.js";
+import Upload from "./components/Upload/upload.js";
 import Login from "./views/Login/Login";
 import Test from "./views/Test/Test";
 import GraphicBrief from "./components/GraphicDesign/GraphicBrief/index.jsx";
@@ -61,7 +64,12 @@ function App() {
           <Route path="/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/ecommerce" element={<Ecommerce />} />
           
+          <Route path="/team-shop" element={<TeamShop />} />
+
           <Route path="/signup" element={<Signup />} />
+          <Route path="/signup-terms" element={<SignupTerms />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/upload" element={<Upload />} />
           <Route path="/login" element={<Login />} />
           {/* Define a route that will take in variable data */}
         </Routes>

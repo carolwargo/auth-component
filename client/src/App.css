@@ -41,3 +41,55 @@
   height: auto;
   border-radius: 50%;
 }
+
+.roll-in-view1 {
+  animation: rollIn1 1.5s ease-in-out;
+}
+
+@keyframes rollIn1 {
+  0% {
+    transform: translateX(-500%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.roll-in-view2 {
+  animation: rollIn2 2s ease-in-out;
+}
+
+@keyframes rollIn2 {
+  0% {
+    transform: translateX(-400%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.roll-in-view3 {
+  animation: rollIn 2.5s ease-in-out;
+}
+
+@keyframes rollIn {
+  0% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.roll-in-view4 {
+  animation: rollIn 3s ease-in-out;
+}
+
+@keyframes rollIn {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
