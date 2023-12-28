@@ -11,8 +11,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 function NavDropdownExample() {
     
   return (
-    <Navbar expand="md"
-    style={{boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)'}}
+    <Navbar expand="md" className='mx-auto' 
+    style={{boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)', fontSize:'1rem', fontFamily:'Poppins'}}
     >
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -48,34 +48,13 @@ function NavDropdownExample() {
             <NavDropdown.Item as={Link} eventKey="/support-services">Support Services</NavDropdown.Item>
           </NavDropdown>
         </Nav>
-        <Nav>
-          <Nav.Link as={Link} to="/signup"><FaSignInAlt /> </Nav.Link>
-          <Nav.Link as={Link} to="/login"><FaUserPlus /> </Nav.Link>
-          <Nav.Link
-  as={Link}
-  to="/contact"
- 
-    style={{
-        fontSize: "1.25rem",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", // Example shadow: 0 offset, 4px blur, 8px spread, 10% opacity
-        textShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
-        backgroundColor: "#BF6A6A",
-        color: "white",
-        paddingRight: "2rem",
-        paddingLeft: "2rem",
-    
-  
-  
-    borderRadius: '4px',
-    padding: '4px 8px 2px 8px',
-    textDecoration: 'none',
-    textAlign: 'center',
+        <Nav className='px-3'>
+  <Nav.Link as={Link} to="/login" style={{ marginRight: '10px' }}><FaSignInAlt /></Nav.Link>
+  <Nav.Link as={Link} to="/signup" style={{ marginRight: '10px' }}><FaUserPlus /></Nav.Link>
+  <Nav.Link as={Link} to="/contact" style={{ marginRight: '10px' }}><FaPhone /></Nav.Link>
+</Nav>
 
-  }}
->
-  <FaPhone /> Contact Us
-</Nav.Link>
-        </Nav>
+
       </Navbar.Collapse>
     </Navbar>
   );

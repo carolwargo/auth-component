@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
-
+import { Alert } from 'react-bootstrap';
+import '../../style/signup.css';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
+import Feedback from 'react-bootstrap/esm/Feedback';
 
 const SignupForm = () => {
+  
   // set initial form state
-  const [userFormData, setUserFormData] = useState({
+  const [signUpFormData, setSignUpFormData] = useState({
     name: '',
     email: '',
     password: '',
   });
-  // set state for form validation
-  const [validated] = useState(false);
+
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
@@ -30,7 +33,7 @@ const SignupForm = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setUserFormData({ ...userFormData, [name]: value });
+    setSignUpFormData({ ...signUpFormData, [name]: value });
   };
 
   const handleFormSubmit = async (event) => {
@@ -45,7 +48,7 @@ const SignupForm = () => {
 
     try {
       const { data } = await addUser({
-        variables: { ...userFormData },
+        variables: { ...signUpFormData },
       });
       console.log(data);
       Auth.login(data.addUser.token);
@@ -53,7 +56,7 @@ const SignupForm = () => {
       console.error(err);
     }
 
-    setUserFormData({
+    setSignUpFormData({
       name: '',
       email: '',
       password: '',
@@ -61,9 +64,24 @@ const SignupForm = () => {
   };
 
   return (
-    <>
+    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      style={{backgroundColor:'#f1f1f1', 
+      padding: '1px', 
+      borderRadius:'10px', 
+      boxShadow:'0 4px 8px rgba(0, 0, 0, 0.5)',
+    fontFamily:'Poppins'}}
+    >
       {/* This is needed for the validation functionality above */}
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <form novalidated='true' onSubmit={handleFormSubmit}>
+      <h2>SIGN<span className="span">UP</span></h2>
+      <p>Already have an account? <Link to='/login'>Login here!</Link><br></br> 
+      <br></br>
+  Want to create an account? <br></br>Complete the following and press "Create My Account"!</p>
+
         {/* show alert if server response is bad */}
         <Alert
           dismissible
@@ -73,66 +91,78 @@ const SignupForm = () => {
         >
           Something went wrong with your signup!
         </Alert>
-
-        <Form.Group className='mb-3'>
-          <Form.Label htmlFor="name">name</Form.Label>
-          <Form.Control
+        <div className='form-group '>
+          <label htmlFor="signupName">
+          </label>
+          <input
             type="text"
-            placeholder="Your name"
+            className='form-control'
+            id='signupName'
+            placeholder="Enter Name"
             name="name"
             onChange={handleInputChange}
-            value={userFormData.name}
+            value={signUpFormData.name}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          <Feedback type="invalid">
             name is required!
-          </Form.Control.Feedback>
-        </Form.Group>
+          </Feedback>
+        </div>
 
-        <Form.Group className='mb-3'>
-          <Form.Label htmlFor="email">Email</Form.Label>
-          <Form.Control
+        <div className='form-group '>
+          <label htmlFor="signupEmail">
+          </label>
+          <input
             type="email"
+            className='form-control'
+            id='signupEmail'
             placeholder="Your email address"
             name="email"
             onChange={handleInputChange}
-            value={userFormData.email}
+            value={signUpFormData.email}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          <Feedback type="invalid">
             Email is required!
-          </Form.Control.Feedback>
-        </Form.Group>
+          </Feedback>
+        </div>
 
-        <Form.Group className='mb-3'>
-          <Form.Label htmlFor="password">Password</Form.Label>
-          <Form.Control
+        <div className='form-group '>
+          <label htmlFor="signupPassword">
+            </label>
+          <input
             type="password"
+            className='form-control'
+            id='signupPassword'
             placeholder="Your password"
             name="password"
             onChange={handleInputChange}
-            value={userFormData.password}
+            value={signUpFormData.password}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          <Feedback type="invalid">
             Password is required!
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Button
+          </Feedback>
+        </div>
+        <br />
+        <p style={{fontSize:'12px', color:'gray'}}>By creating an account, you have read and agree to our <Link to='/signupTerms'>Two-Faced General Terms and Conditions</Link>. For more details on how we use the information we collect about you, please read our <Link to= '/privacy-policy'>Two-Faced Privacy and Cookie Policy</Link>.</p>
+       
+        <button
           disabled={
             !(
-              userFormData.name &&
-              userFormData.email &&
-              userFormData.password
+              signUpFormData.name &&
+              signUpFormData.email &&
+              signUpFormData.password
             )
           }
           type="submit"
           variant="success"
-        >
-          Submit
-        </Button>
-      </Form>
-    </>
+          className="form-button btn-success">
+         Create My Account
+        </button>
+     </form>
+    </motion.div>
+    </div>
   );
 };
 

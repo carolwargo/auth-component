@@ -1,120 +1,123 @@
-import React, { useRef } from "react";
+import React, {useState} from "react";
 import { motion } from "framer-motion";
-import { Col, Row } from "react-bootstrap";
+import {Container, Row, Col } from "react-bootstrap"; // Add 'from "react-bootstrap"' at the en
+import "../../style/contact.css"; 
 
-import WhiteWaves from "../../assets/images/WhiteWaves.png";
+const ContactForm = () => {
+  const [contactFormData, setContactFormData] = useState({ name: '', email: '', message: '' });
 
-import Form from "react-bootstrap/Form";
+  const handleChange = (e) => {
+    const value = e.target.value;
+    const name = e.target.name;
+    setContactFormData({ ...contactFormData, [name]: value });
+  };
 
-const Contact = () => {
-  const firstNameRef = useRef(null);
-  const lastNameRef = useRef(null);
-  const emailRef = useRef(null);
-  const messageRef = useRef(null);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const data = {
-      firstName: firstNameRef.current.value,
-      lastName: lastNameRef.current.value,
-      email: emailRef.current.value,
-      message: messageRef.current.value,
-    };
-    alert("Message Sent: \n" + JSON.stringify(data));
+    try {
+      const response = await fetch('http://localhost:3001/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactFormData),
+      });
+
+      if (response.ok) {
+        alert(`Thank you ${contactFormData.name} for your message!`);
+        setContactFormData({ name: '', email: '', message: '' });
+      } else {
+        alert('Error submitting the form. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+      alert('Error submitting the form. Please try again later.');
+    }
   };
 
   return (
+    <div >
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      style={{padding: '2rem', 
-      backgroundImage: `url(${WhiteWaves})`,}}
+      style={{backgroundColor:'#f1f1f1', 
+      padding: '10px', 
+      borderRadius:'10px', 
+      boxShadow:'0 4px 8px rgba(0, 0, 0, 0.5)',
+    fontFamily:'Poppins'}}
     >
-     
-      <Col md={6}className="container bg-secondary-subtle text-dark p-4"
-      style={{
-        borderRadius: '10px',
-      }}>
-         <h1 style={{ fontFamily: "Great Vibes", color: "#0F7E8F", textShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", }}>Contact</h1>
-        <Form className="form" onSubmit={handleSubmit}>
-          <Row>
-            <Col>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label htmlFor="firstName">First name</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="firstName"
-                  className="firstName"
-                  tabIndex="1"
-                  ref={firstNameRef}
-                  placeholder="First Name"
-                />
-              </Form.Group>
-            </Col>
+      <Container>
+        
 
-            <Col>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label htmlFor="lastName">Last name</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="lastName"
-                  className="lastName"
-                  tabIndex="2"
-                  ref={lastNameRef}
-                  placeholder="Last Name"
-                />
-              </Form.Group>
-            </Col>
-          </Row>
+        <Row>
+          
+          <Col lg={6} className="py-5">
+            <h1 className="py-4">GET IN TOUCH</h1>
+            <h4>CONTACT <span>INFORMATION</span></h4>
+            <br />
+            <address>
+              <strong>Email: put@email.address.com</strong>
+              <br />
+            
+              <p>
+                <strong>Phone: 443-771-1726</strong>
+              </p>
+            </address>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit possimus in rem
+              modi minus quia delectus voluptas eaque quaerat mollitia, eum amet. Praesentium,
+              nostrum repellendus culpa delectus facilis ut alias?
+            </p>
+          </Col>
 
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label htmlFor="email">Email</Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              id="email"
-              className="email"
-              placeholder="example@email.com"
-              tabIndex="3"
-              ref={emailRef}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label htmlFor="message">Message</Form.Label>
-            <Form.Control
-              as="textarea"
-              placeholder="Start typing..."
-              className="message"
-              name="message"
-              ref={messageRef}
-            />
-          </Form.Group>
-          <button type="submit" className="send" onClick={handleSubmit}
-          style={{
-            fontSize: "1.25rem",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", // Example shadow: 0 offset, 4px blur, 8px spread, 10% opacity
-            textShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
-            backgroundColor: "#0F7E8F",
-            color: "white",
-            paddingRight: "1.75rem",
-            paddingLeft: "1.75rem",
-            borderRadius: "10px",
-          }}
-          >
-            Send
-          </button>
-        </Form>
-      </Col>
+          <Col lg={6} >
+          <form method="post" onSubmit={handleSubmit}>
+<h2>CONTACT<span className="span">US</span></h2>
+      <label htmlFor="name"></label>
+      <input
+      type="text"
+      name="name"
+      id="name"
+      onChange={handleChange}
+      value={contactFormData.name}
+      placeholder="Enter Name"
+      required
+      >
+      </input>
+      <label htmlFor="email"></label>
+      <input
+      type="email"
+      name="email"
+      id="email"
+      onChange={handleChange}
+      value={contactFormData.email}
+      placeholder="example@gmail.com"
+      required
+      >
+      </input>
+      <label htmlFor="message"></label>
+      <textarea
+      name="message"
+      id="message"
+      rows={5}
+      onChange={handleChange}
+      value={contactFormData.message}
+      placeholder="Type Message Here..."
+      required
+      >
+      </textarea>
+      <button type="submit">Send</button>
+</form>
+          </Col>
+        </Row>
+      </Container>
+
     </motion.div>
+    </div>
   );
 };
 
-export default Contact;
+export default ContactForm;
