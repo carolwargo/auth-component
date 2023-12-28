@@ -1,6 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const cors = require('cors');
 const { authMiddleware } = require('./utils/auth');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -18,6 +19,13 @@ const server = new ApolloServer({
     resolvers,
     context: authMiddleware,
 });
+
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -42,15 +50,16 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+server.post('/upload', upload)
 app.post('/submit-form', (req, res) => {
-    const { firstName, lastName, email, message } = req.body;
+    const { Name, email, message } = req.body;
   
     const mailOptions = {
       from: 'YOUR_EMAIL@gmail.com',
       to: 'carolwargo.dev@gmail.com',
       subject: 'New Contact Form Submission',
       text: `
-        Name: ${firstName} ${lastName}
+        Name: ${Name} }
         Email: ${email}
         Message: ${message}
       `
