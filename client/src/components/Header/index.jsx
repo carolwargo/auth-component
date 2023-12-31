@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // Import React Router Link component for internal hyperlinks
 //import { Link } from 'react-router-dom';
 
-import HomeHeaderBlack2 from '../../assets/images/HomeHeaderBlack2.png';
+import HomeBig from '../../assets/images/HomeBig.png';
 
 
 const Header = () => {
@@ -11,32 +11,32 @@ const Header = () => {
     <header>
       <div
         id='intro-example'
-        className='p-5 text-center bg-image'
+        className='p-4 bg-image'
            style={{
-          backgroundImage: `url(${HomeHeaderBlack2})`,
+          backgroundImage: `url(${HomeBig})`,
           backgroundSize: 'cover', // Set the background size to cover the entire viewport
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed', // Optional: Keep the background fixed while scrolling
         }}
       >
         <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.0)' }}>
-          <div className='d-flex justify-content-center align-items-center h-100'>
-            <div className='col-md-8 text-white'
-            >
-              <h1 className='mb-2' style={{textShadow: '0 4px 8px rgba(0, 0, 0, 3.8)',
-              fontSize:'3rem'}}>WELCOME!</h1>
+          <div className='d-flex h-110 '>
+          <div className='col-md-5 text-white'
+            ></div>
+            <div className='col-md-7 text-center text-white p-2 px-5'>
+              
+            
+              <h4 className='p-2 mt-4' style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}><i>"Make a lasting </i><span className='text-info' style={{fontSize:'3rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 3.5)'}}>VISUAL IMPACT</span><i> with stunning graphics..."</i></h4> 
+           
+              <h4 style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 3.5)'}}><i>"Build a powerful </i><span className='text-info' style={{fontSize:'3rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 3.5)'}}>ONLINE PRESENCE</span> <i>through web development."</i></h4>
               <br></br>
-              <p className='px-4'
-              style={{
-                fontFamily:'monospace',
-                textShadow: '0 4px 8px rgba(0, 0, 0, 3.8)',
-              }}>"Make a lasting visual impact with stunning graphics or build a powerful online presence               through web development. <br></br> <br></br>Our team of experts are here to bring your vision to life."</p>
               <br></br>
-              <h6 style={{fontFamily:'sans-serif'}}>CHOOSE YOUR PATH TO GET STARTED...</h6>
+              <h6 style={{fontFamily:'sans-serif', textShadow: '2px 2px 4px rgba(0, 0, 0, 3.5)'}} className='mb-4'>CHOOSE YOUR PATH TO GET STARTED...</h6>
+              
               <Link to='/graphic-design'>
   <button
     type="button"
-    className="btn btn-outline-info btn-md m-2"
+    className="btn btn-outline-info bg-black btn-sm m-1 px-5"
     data-mdb-ripple-init
   >
     <b>Graphic Design</b>
@@ -47,7 +47,8 @@ const Header = () => {
 <Link to='/web-dev'>
   <button
     type="button"
-    className="btn btn-info text-black btn-md m-2"
+    className="btn btn-outline-black bg-info text-black btn-sm m-1" 
+    style={{paddingRight: '2.25rem', paddingLeft: '2.25rem'}}
     data-mdb-ripple-init
   >
     <b>Web Development</b>
@@ -59,7 +60,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
     </header>
   );
 };

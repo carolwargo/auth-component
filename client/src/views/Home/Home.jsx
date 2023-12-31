@@ -12,6 +12,9 @@ import { GiBasketballJersey } from "react-icons/gi";
 import { BsArrowThroughHeart } from "react-icons/bs";
 import { PiTShirtDuotone } from "react-icons/pi";
 
+import  Promo  from '../../assets/images/Home/Promo.png';
+
+
 
 const Home = () => {
   return (
@@ -21,12 +24,20 @@ const Home = () => {
     }}>
         <Header />
         <div className="container mt-5">
+        <h1 className='mb-2' style={{textShadow: '0 4px 8px rgba(0, 0, 0, 3.8)',
+              fontSize:'3rem'}}>WELCOME!</h1>
+              <br></br>
+              <p className='px-4'
+              style={{
+                textShadow: '0 4px 8px rgba(0, 0, 0, 3.8)',
+              }}>"Make a lasting visual impact with stunning graphics or build a powerful online presence               through web development. <br></br> <br></br>Our team of experts are here to bring your vision to life."</p>
+              <br></br>
           <div className="row">
             <div className="col-sm-12 col-md-6 col-lg-6">
               <h2>Team Shop</h2>
               </div>
               <div className="col-sm-12 col-md-6 col-lg-6">
-              <image></image>
+              
               </div>
             </div>
             <h3>Team Shop</h3>
@@ -75,14 +86,16 @@ const Home = () => {
             <h3>Custom Merchandise</h3>
             <div className="row p-5">
           <div className="col-sm-12 col-md-3 col-lg-2">
+          <img src={Promo} alt="Promo" className='rounded mb-2' style={{width: "100%", height: "auto"}} />
+     
         <p>
         <a href="/graphic-design/contact-form" className='text-decoration-none text-light'>
         Promo Items
                   <FaArrowRight className="ms-2" />
                 </a>
         </p>
-          </div>
-          <div className="col-sm-12 col-md-3 col-lg-2">
+    </div>
+     {/**     <div className="col-sm-12 col-md-3 col-lg-2">
         <p>
         <a href="/graphic-design/contact-form" className='text-decoration-none text-light'>
         Product Labels & Packaging
@@ -90,6 +103,8 @@ const Home = () => {
                 </a>
         </p>
           </div>
+          */} 
+
           <div className="col-sm-12 col-md-3 col-lg-2">
         <p>
         <a href="/graphic-design/contact-form" className='text-decoration-none text-light'>
