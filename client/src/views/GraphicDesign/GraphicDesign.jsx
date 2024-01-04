@@ -29,7 +29,10 @@ export const GraphicDesign = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         style={{ overflow: "hidden" }}
+        className="p-2"
       >
+
+        {/** Fix CTA on Graphic Header*/}
         <GraphicHeader />
         <br></br>
         <br></br>
@@ -51,58 +54,262 @@ export const GraphicDesign = () => {
           className="graphic-design-process"
           id="graphic-design-process"
         >
-          <Row className="row">
-            <Col className="col-sm-3 d-flex align-items-center">
+          <div className="row">
+            <div className="col-sm-3 d-flex align-items-center">
               <FcTemplate size={150} className="mr-2" />{" "}
               {/* Adjust the icon size and margin as needed */}
               <p>Choose your product based on your individual need.</p>
-            </Col>
+            </div>
 
-            <Col className="col-sm-3 d-flex align-items-center">
+            <div className="col-sm-3 d-flex align-items-center">
               <FcTodoList size={150} className="mr-2" />
               <p>
                 Fill out a brief and share your project details with your
                 designer.
               </p>
-            </Col>
+            </div>
 
-            <Col className="col-sm-3 d-flex align-items-center">
+            <div className="col-sm-3 d-flex align-items-center">
               <FcCollaboration size={150} className="mr-2" />
               <p>Work with your designer on design and revisions.</p>
-            </Col>
+            </div>
 
-            <Col className="col-sm-3 d-flex align-items-center">
+            <div className="col-sm-3 d-flex align-items-center">
               <FcDownload size={150} className="mr-2" />
               <p>
                 Receive your files & downloads and discuss printing options.
               </p>
-            </Col>
-          </Row>
+            </div>
+          </div>
           <br></br>
-          <br></br>
-          <Row className="row d-flex align-items-center justify-content-center">
-          
-          <Col className="options-dropdown d-flex align-items-center justify-content-center">
-              <h3 className="text-center">
-                Start now with 1 of 2 options- Choose your product or find inspiration based on events.
+          <div className="row d-flex align-items-center justify-content-center">
+          <div className="col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center text-center">
+          <h3 className="text-center">
+                Start now!
               </h3>
+              <p>Choose your product or find inspiration based on events.</p>
+             
+          </div>
+         {/** <Col className="options-dropdown d-flex align-items-center justify-content-center">
+              <h3 className="text-center">
+                Start now!
+              </h3>
+              <p>Choose your product or find inspiration based on events.</p>
               </Col>  
-          </Row>
+              */} 
+          </div>
         </Container>
         <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+
+        {/** Add a dropdown menu for the options below */}
+        {/** Options: business, team, special event, party */}
         <Container
           className="graphic-design-events"
           id="graphic-design-events"
         >
-        <Row className="row d-flex align-items-center justify-content-center">
+        <div className="row d-flex align-items-center justify-content-center">
           <h3 className="text-center">
               1. Explore by event to get inspiration.
             </h3>
-            </Row>
-          <Row className="row d-flex align-items-center justify-content-center text-center">
+            <div className="col-sm-12 col-md-6 col-lg-3">
+              BUSINESS
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-3">
+              TEAM or CLUB
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-3">
+              SPECIAL EVENT
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-3">
+              PARTY
+            </div>
+            </div>
+            <MDBRow
+            className="graphic-design-packages row-cols-1 row-cols-md-4 g-4"
+            id="graphic-design-packages"
+          >
+            <MDBCol
+              className="graphic-design-business-cards"
+              id="graphic-design-business-cards"
+            >
+              <MDBCard>
+                <MDBCarousel showControls fade showIndicators={false}>
+                  <MDBCarouselItem itemId={1}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/041.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                  <MDBCarouselItem itemId={2}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/042.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                  <MDBCarouselItem itemId={3}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/043.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                </MDBCarousel>
+                <MDBCardBody>
+                  <MDBCardTitle>Business Cards</MDBCardTitle>
+                  <MDBCardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </MDBCardText>
+                  <a
+                    href="/business-cards"
+                    className="btn btn d-flex align-items-center"
+                    style={{ fontSize: "12px" }}
+                  >
+                    Get started with business cards{" "}
+                    <FaArrowRight className="ms-2" />
+                  </a>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+            
+
+            <MDBCol
+              className="graphic-design-essentials"
+              id="graphic-design-essentials"
+            >
+              <MDBCard>
+                <MDBCarousel showControls fade showIndicators={false}>
+                  <MDBCarouselItem itemId={1}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/041.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                  <MDBCarouselItem itemId={2}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/042.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                  <MDBCarouselItem itemId={3}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/043.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                </MDBCarousel>
+                <MDBCardBody>
+                  <MDBCardTitle>Start Up Essentials</MDBCardTitle>
+                  <MDBCardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </MDBCardText>
+                  <a
+                    href="/essentials"
+                    className="btn btn d-flex align-items-center"
+                    style={{ fontSize: "12px" }}
+                  >
+                    Get started with essentials{" "}
+                    <FaArrowRight className="ms-2" />
+                  </a>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+
+            <MDBCol className="graphic-design-logo" id="graphic-design-logo">
+              <MDBCard>
+                <MDBCarousel showControls fade showIndicators={false}>
+                  <MDBCarouselItem itemId={1}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/041.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                  <MDBCarouselItem itemId={2}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/042.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                  <MDBCarouselItem itemId={3}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/043.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                </MDBCarousel>
+                <MDBCardBody>
+                  <MDBCardTitle>Custom Logo Package</MDBCardTitle>
+                  <MDBCardText>
+                    Custom logo that is unique to your brand and business.
+                  </MDBCardText>
+                  <a
+                    href="/logo"
+                    className="btn btn d-flex align-items-center"
+                    style={{ fontSize: "12px" }}
+                  >
+                    Get started with logo <FaArrowRight className="ms-2" />
+                  </a>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+
+            <MDBCol
+              className="graphic-design-branding"
+              id="graphic-design-branding"
+            >
+              <MDBCard>
+                <MDBCarousel showControls fade showIndicators={false}>
+                  <MDBCarouselItem itemId={1}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/041.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                  <MDBCarouselItem itemId={2}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/042.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                  <MDBCarouselItem itemId={3}>
+                    <img
+                      src="https://mdbootstrap.com/img/new/slides/043.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </MDBCarouselItem>
+                </MDBCarousel>
+                <MDBCardBody>
+                  <MDBCardTitle>Logo & Branding Kit</MDBCardTitle>
+                  <MDBCardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </MDBCardText>
+                  <a
+                    href="/branding"
+                    className="btn btn d-flex align-items-center"
+                    style={{ fontSize: "12px" }}
+                  >
+                    Get started with branding <FaArrowRight className="ms-2" />
+                  </a>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          </MDBRow>
+          <br></br>
+          <br></br>
+          <div className="row d-flex align-items-center justify-content-center text-center">
             <p>
               Know what you need without looking?{" "}
               <span>
@@ -112,22 +319,22 @@ export const GraphicDesign = () => {
                 </a>
               </span>
             </p>
-          </Row>
+          </div>
 </Container>
           
         <Container
           className="graphic-design-product"
           id="graphic-design-product"
         >
-          <Row className="row d-flex align-items-center justify-content-center">
+          <div className="row d-flex align-items-center justify-content-center">
             <h3 className="text-center">
               2. Choose the product you need designed for your business or event.
             </h3>
-          </Row>
+          </div>
 
 
 
-          <Row className="row d-flex align-items-center justify-content-center text-center">
+          <div className="row d-flex align-items-center justify-content-center text-center">
             <p>
               Know what you need without looking?{" "}
               <span>
@@ -137,9 +344,8 @@ export const GraphicDesign = () => {
                 </a>
               </span>
             </p>
-          </Row>
+          </div>
           <br></br>
-            for
           <MDBRow
             className="graphic-design-packages row-cols-1 row-cols-md-4 g-4"
             id="graphic-design-packages"
