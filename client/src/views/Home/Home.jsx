@@ -38,7 +38,7 @@ const Home = () => {
               </p>
               <p className="mt-5">
               <a
-                href="/graphic-design/contact-form"
+                href="/business"
                 className="text-decoration-none"
               >
               See Business Essentials

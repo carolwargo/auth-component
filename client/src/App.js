@@ -9,6 +9,7 @@ import About from "./views/About/About";
 import Contact from "./views/Contact/Contact";
 import WebDev from "./views/WebDev/WebDev";
 import GraphicDesign from "./views/GraphicDesign/GraphicDesign";
+import Business from "./views/Business/Business";
 import SoftwareDevelopment from "./views/SoftwareDevelopment/SoftwareDevelopment";
 import DigitalMarketing from "./views/DigitalMarketing/DigitalMarketing"; 
 import Ecommerce from "./views/Ecommerce/Ecommerce";  
@@ -51,6 +52,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/web-dev" element={<WebDev/>} />
           <Route path="/graphic-design" element={<GraphicDesign />} />
+          <Route path="/business" element={<Business />} />
           <Route path="/test" element={<Test />} />
           <Route path="/logo" element={<Logo />} />
           <Route path="/essentials" element={<Essentials />} />
